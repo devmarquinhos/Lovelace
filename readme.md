@@ -1,6 +1,6 @@
-<section align="center">
+<p align="center">
     <h1>Voltaire</h1>
-</section>
+</p>
 
 <p align="center">
     <a href="#Projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
