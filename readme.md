@@ -1,5 +1,5 @@
 <p align="center">
-    <h1>Voltaire</h1>
+    Voltaire
 </p>
 
 <p align="center">
