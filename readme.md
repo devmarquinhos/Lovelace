@@ -1,6 +1,6 @@
-<p align="center">
+<h1 align="center">
     Voltaire
-</p>
+</h1>
 
 <p align="center">
     <a href="#Projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
