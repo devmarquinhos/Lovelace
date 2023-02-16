@@ -8,6 +8,11 @@
     color: #F4F4F4;
 }
 
+*::selection {
+    background: #90E0EF;
+    color: #040404;
+}
+
 body {
     background: #040404;
 }
@@ -147,7 +152,7 @@ footer {
     font-weight: 400;
     width: 100%;
     height: 128px;
-    margin-top: 96px;
+    margin: 96px 0;
     text-align: center;
 }
 
