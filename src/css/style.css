@@ -80,13 +80,14 @@ header {
     border-radius: 6px;
     padding: 16px;
     color: #0077B6;
-    background-color: #F4F4F4;
+    background-color: transparent;
+    border: 1px solid #0077B6;
 
     transition: all .2s;
 }
 
 #startPractice:hover {
-    background-color: #e4e4e4;
+    background-color: #F4F4F4;
 }
 
 #seeBooks {
