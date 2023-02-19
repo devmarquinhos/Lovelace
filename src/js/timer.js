@@ -10,7 +10,6 @@ function start() {
     switch (timerStatus) {
         case "play":
             return
-
         default:
             timerStatus = "play"
             timer = setInterval(() => {
@@ -23,7 +22,6 @@ function start() {
 function stop() {
     timerStatus = "stop"
     clearInterval(timer)
-
 }
 
 function clearTimer(){
