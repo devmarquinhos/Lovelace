@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Linkando o CSS -->  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Linkando as Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Voltaire</title>
+
+    <style>
+        * {
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        
+            font-size: 16px;
+            color: #F4F4F4;
+        }
+        
+        *::selection {
+            background: #90E0EF;
+            color: #040404;
+        }
+        
+        body {
+            background: #040404;
+        }
+        
+        header h1 {
+            color: #0077B6;
+            font-size: 24px;
+        }
+        
+        header {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+            width: 100%;
+        
+            border-bottom: 1px solid #0077B6;
+        }
+        
+        #mainContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            width: 100%;
+            
+            margin: 48px 0;
+            font-size: 16px;
+        }
+        
+        #mainContent h1 {
+            font-size: 18px;
+            margin: 48px 16px;
+        }
+        
+        #mainContent p {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        
+            border: 1px solid #0077B6;
+            border-radius: 6px;
+            padding: 32px;
+            margin: 0 32px;
+        
+            box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
+        
+        }
+        
+        #interactButtons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        
+        }
+        
+        #interactButtons a {
+            text-decoration: none;
+        
+        }
+        
+        #startPractice {
+            font-weight: 700;
+            width: 320px;
+            text-align: center;
+            border-radius: 6px;
+            padding: 16px;
+            color: #0077B6;
+            background-color: transparent;
+            border: 1px solid #0077B6;
+        
+            transition: all .2s;
+        }
+        
+        #startPractice:hover {
+            background-color: #F4F4F4;
+        }
+        
+        #seeBooks {
+            width: 320px;
+            text-align: center;
+            border: 1px solid #0077B6;
+            padding: 16px;
+            border-radius: 6px;
+            color: #0077B6;
+        
+            transition: all .2s;
+        }
+        
+        #seeBooks:hover {
+            border: 1px solid #F4F4F4;
+            color: #F4F4F4;
+        }
+        
+        #socialButtons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin: 48px 0;
+        }
+        
+        #socialButtons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            font-size: 24px;
+            padding: 24px;
+            border-radius: 6px;
+            transition: all .2s;
+            box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
+        }
+        
+        #socialButtons a:hover {
+            background: #F4F4F4;
+        }
+        
+        .divider {
+            height: 72px;
+            border: 1px solid #F4F4F4;
+        }
+        
+        footer {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            justify-content: center;
+            padding: 48px 32px;
+        
+            border-top: 1px solid #0077B6;
+            font-size: 16px;
+            font-weight: 400;
+            width: 100%;
+            height: 128px;
+            margin: 96px 0;
+            text-align: center;
+        }
+        
+        footer p span {
+            font-weight: 700;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            margin-top: 98px;
+        }
+        
+        #timer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 48px;
+            padding: 32px;
+            border: 1px solid #0077B6;
+            border-radius: 6px;
+            box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
+        
+        }
+        
+        .timerButton {
+            width: 120px;
+            background-color: transparent;
+            border: 1px solid #0077B6;
+            border-radius: 6px;
+            padding: 16px;
+            color: #0077B6;
+            font-weight: 700;
+        
+            transition: all .2s;
+        }
+        
+        .timerButton:hover {
+            cursor: pointer;
+            background-color: #F4F4F4;
+        }
+        
+        @media only screen and (max-width: 500px) {
+            footer {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Voltaire</h1>
+    </header>
+
+    <section id="mainContent">
+        <h1>Seja bem-vindo ao Voltaire</h1>
+        <p>Uma ferramenta para que você possa praticar a sua leitura e melhorar ainda mais a forma com que você lida com palavras que você não conhece!</p>
+    </section>
+
+    <section id="interactButtons">
+        <a href="pratice.html" id="startPractice">Comece a praticar</a>
+        <a href="https://www.gutenberg.org/" target="_blank" id="seeBooks">e-Books gratuitos em inglês</a>
+    </section>
+
+    <section id="socialButtons">
+        <a href="https://github.com/devmarquinhos/Voltaire" target="_blank"><img src="github-icon.svg" alt="Github"></a>
+        <a href="#"><img src="link-icon.svg" alt="Link"></a>
+        <a href="https://www.figma.com/file/Ej7N8rlsG69xa393ALhbnW/Voltaire?node-id=0%3A1&t=UJtTMR0yc0eKyPoZ-1" target="_blank"><img src="figma-icon.svg" alt="Figma"></a>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por <br><span>Daniel Alves</span>,<span> Marcos Emanuel</span> e <span> Melkysedeke Costa</span>.</p>
+        <span class="divider"></span>
+        <p><br>Orientado pela <span>Prof. Dr. Lenade Barreto</span>.</p>
+    </footer>
+</body>
+<script src="static/script.js"></script>
+</html>
