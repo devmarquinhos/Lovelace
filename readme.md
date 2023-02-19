@@ -9,6 +9,10 @@
     <a href="#memo-Licença">Licença</a>
 </p>
 
+
+<p align="center">
+  <img alt="projeto Voltaire" src=".github/preview.jpg" width="100%">
+</p>
 ---
 
 ## :computer: Projeto
