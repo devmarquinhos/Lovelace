@@ -64,6 +64,20 @@ header {
 
 }
 
+#exampleSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+    margin: 32px;
+}
+
+#exampleSection h2 {
+    font-size: 18px;
+}
+
 #interactButtons {
     display: flex;
     flex-direction: column;
@@ -197,19 +211,6 @@ footer p span {
 .timerButton:hover {
     cursor: pointer;
     background-color: #F4F4F4;
-}
-
-#formTeste {
-    color: #0077B6;
-    margin-top: 64px;
-}
-
-#formTeste input {
-    background-color: #0077B6;
-}
-
-#formTeste button {
-    background-color: #0077B6;
 }
 
 @media only screen and (max-width: 500px) {
