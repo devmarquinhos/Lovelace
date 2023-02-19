@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" >
 <head>
     <link rel="stylesheet" href="/src/css/style.css">    
     <meta charset="UTF-8">
@@ -11,15 +11,33 @@
     <title>Voltaire - Hora de praticar!</title>
 </head>
 <body>
+    <header>
+        <h1>Voltaire</h1>
+    </header>
+
     <div class="container">
         <h3 id="timer">00:00:00</h3>
         <div class="buttons">
             <button onclick="start()" class="timerButton">Começar</button>
             <button onclick="stop()" class="timerButton">Parar</button>
             <button onclick="clearTimer()" class="timerButton">Limpar</button>
-
         </div>
     </div>
+
+    <section id="textContainer">
+        <iframe id="containerContent" src="/assets/mywonderfulfamily.html" frameborder="0"></iframe>
+        <div id="textButtons">
+            <button class="sendAnswer">Enviar resposta</button>
+            <button class="changeText" onclick="changeText()">Mudar texto</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por <span>Daniel Alves</span>,<span> Marcos Emanuel </span> e <span> Melkysedeke Costa</span>.</p>
+        <span class="divider"></span>
+        <p>Orientado pela <span>Prof. Dr. Lenade Barreto</span>.</p>
+    </footer>
     <script src="/src/js/timer.js"></script>
+    <script src="/src/js/script.js"></script>
 </body>
 </html>

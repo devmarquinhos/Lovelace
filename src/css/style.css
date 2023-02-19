@@ -17,6 +17,7 @@ body {
     background: #040404;
 }
 
+/* Header */
 header h1 {
     color: #0077B6;
     font-size: 24px;
@@ -33,6 +34,7 @@ header {
     border-bottom: 1px solid #0077B6;
 }
 
+/* Main content container */
 #mainContent {
     display: flex;
     flex-direction: column;
@@ -64,6 +66,7 @@ header {
 
 }
 
+/* Example Container */
 #exampleSection {
     display: flex;
     flex-direction: column;
@@ -78,6 +81,7 @@ header {
     font-size: 18px;
 }
 
+/* Buttons container */
 #interactButtons {
     display: flex;
     flex-direction: column;
@@ -92,6 +96,7 @@ header {
 
 }
 
+/* Start practice button */
 #startPractice {
     font-weight: 700;
     width: 320px;
@@ -109,6 +114,7 @@ header {
     background-color: #F4F4F4;
 }
 
+/* See eBooks button */
 #seeBooks {
     width: 320px;
     text-align: center;
@@ -125,6 +131,7 @@ header {
     color: #F4F4F4;
 }
 
+/* Social Buttons */
 #socialButtons {
     display: flex;
     justify-content: center;
@@ -149,6 +156,54 @@ header {
     background: #F4F4F4;
 }
 
+/* Practice text */
+#textContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#textContainer iframe {
+    border: 1px solid #0077B6;
+    border-radius: 6px;
+    padding: 16px;
+    width: 640px;
+    height: 360px;
+    margin: 32px;
+
+}
+
+#textButtons {
+    display: inline-flex;
+    gap: 40px;
+}
+
+.sendAnswer {
+    padding: 16px;
+    color: #040404;
+    background: #90E0EF;
+    border: 1px solid ;
+    border-radius: 6px;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.changeText {
+    padding: 16px;
+    color: #f4f4f4;
+    background: transparent;
+    border: 1px solid #0077B6;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.changeText:hover {
+    box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
+}
+
+/* Footer */
 .divider {
     height: 72px;
     border: 1px solid #F4F4F4;
@@ -174,6 +229,7 @@ footer p span {
     font-weight: 700;
 }
 
+/* Timer */
 .container {
     display: flex;
     flex-direction: column;
@@ -213,9 +269,22 @@ footer p span {
     background-color: #F4F4F4;
 }
 
+/* Media queries */
 @media only screen and (max-width: 500px) {
     footer {
         display: flex;
         flex-direction: column;
+    }
+
+    #textContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #textContainer iframe {
+        width: 360px;
+        height: 720px;
+        margin: 32px;
     }
 }
