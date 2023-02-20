@@ -1,4 +1,5 @@
 "use strict"
+let pos = 0
 let hours = 0
 let minutes = 0
 let seconds = 0
@@ -56,6 +57,7 @@ function changeText(){
     stop()
     clearTimer()
     start()
+    
     const textAddress = [
         '/assets/ourvacation.html',
         '/assets/myday.html',
@@ -63,15 +65,15 @@ function changeText(){
         '/assets/mynameisjohn.html',
         '/assets/agreatsummervacation.html'
     ]
-    
-    document.getElementById("containerContent").setAttribute("src", textAddress[getRandomInt()])
-    console.log(getRandomInt())
-}
 
-function getRandomInt() {
-    var min = Math.ceil(1);
-    var max = Math.floor(5);
+    if (pos < textAddress.length) {
+        pos++
+        document.getElementById("containerContent").setAttribute("src", textAddress[pos])
 
-    // The maximum is exclusive and the minimum is inclusive
-    return Math.floor(Math.random() * (max - min) + min)
+        if (pos == textAddress.length) {
+            pos = 0
+            document.getElementById("containerContent").setAttribute("src", textAddress[pos])
+        }
+    } 
+    console.log("Segundo console.log: " + pos)
 }
