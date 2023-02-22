@@ -34,6 +34,11 @@ header {
     border-bottom: 1px solid #0077B6;
 }
 
+.tudo{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
 /* Main content container */
 #mainContent {
     display: flex;
@@ -48,11 +53,12 @@ header {
 }
 
 #mainContent h1 {
-    font-size: 18px;
+    font-size: 40px;
     margin: 48px 16px;
 }
 
 #mainContent p {
+    width: 720px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -68,27 +74,36 @@ header {
 
 /* Example Container */
 #exampleSection {
+    width: 640px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align:start;
     gap: 32px;
     margin: 32px;
 }
 
 #exampleSection h2 {
-    font-size: 18px;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    align-items: start;
+}
+
+#exampleSection2 img {
+    width: 300px;
+    margin: 32px;
 }
 
 /* Buttons container */
 #interactButtons {
     display: flex;
-    flex-direction: column;
+    flex-direction:row-reverse;
     justify-content: center;
     align-items: center;
     gap: 16px;
-
 }
 
 #interactButtons a {
@@ -104,14 +119,9 @@ header {
     border-radius: 6px;
     padding: 16px;
     color: #0077B6;
-    background-color: transparent;
+    background-color: #f4f4f4;
     border: 1px solid #0077B6;
-
     transition: all .2s;
-}
-
-#startPractice:hover {
-    background-color: #F4F4F4;
 }
 
 /* See eBooks button */
@@ -272,6 +282,52 @@ footer p span {
 /* Media queries */
 @media only screen and (max-width: 500px) {
     footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tudo{
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    #mainContent h1 {
+        font-size: 20px;
+        margin: 48px 16px;
+    }
+
+    #mainContent p {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    
+        border: 1px solid #0077B6;
+        border-radius: 6px;
+        padding: 24px;
+        margin: 0px 32px;
+    
+        box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
+    
+    }
+
+    #exampleSection{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 32px;
+        margin: 32px;
+    }
+
+    #exampleSection2 img {
+        margin-left: 40px;
+    }
+
+    #interactButtons{
         display: flex;
         flex-direction: column;
     }
