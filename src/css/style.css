@@ -239,6 +239,10 @@ footer p span {
     font-weight: 700;
 }
 
+footer .divider {
+    display: none;
+}
+
 /* Timer */
 .container {
     display: flex;
