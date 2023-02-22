@@ -20,7 +20,7 @@
 
 Projeto para fins didáticos em sala de aula para que discentes (alunos) da matéria de lingua inglesa possam praticar sua leitura com textos dinâmicos e simples acompanhados de um docente (professor).
 
-Este foi orientado pela **Prof. Dr. Lenade Barreto**, desenvolvido e idealizado por **Daniel Santana**, **Marcos Emanuel** e **Mateus Costa**.
+Este foi orientado pela **Prof. Dr. Lenade Barreto**, desenvolvido e idealizado por **Daniel Santana**, **Marcos Emanuel** e **Melkysedeke Costa**.
 
 ## :rocket: Tecnologias
 
@@ -31,7 +31,7 @@ Este foi orientado pela **Prof. Dr. Lenade Barreto**, desenvolvido e idealizado 
 
 ## :art: Layout
 
-O layout do projeto pode ser acessado clicando [aqui](). Não é necessário ter uma conta para acessar.
+O layout do projeto pode ser acessado clicando [aqui](https://www.figma.com/file/Ej7N8rlsG69xa393ALhbnW/Voltaire?node-id=0%3A1&t=13N8ZV5C8l07Xyhr-1). Não é necessário ter uma conta para acessar.
 
 ## :memo: Licença
 
