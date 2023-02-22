@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" >
+<html lang="pt-br">
 <head>
     <link rel="stylesheet" href="./src/css/style.css">    
     <meta charset="UTF-8">
@@ -10,29 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
     <title>Voltaire - Hora de praticar!</title>
 </head>
-<body>
+<body onload="start()">
     <header>
         <h1>Voltaire</h1>
     </header>
 
     <div class="container">
         <h3 id="timer">00:00:00</h3>
-        <div class="buttons">
-            <button onclick="start()" class="timerButton">Começar</button>
-            <button onclick="stop()" class="timerButton">Parar</button>
-            <button onclick="clearTimer()" class="timerButton">Limpar</button>
-        </div>
     </div>
 
     <section id="textContainer">
         <div id="containerContent">
             
         </div>
-        <!-- <iframe id="containerContent" src="./assets/ourvacation.html" frameborder="0"></iframe> -->
-        <div id="textButtons">
-            <button class="sendAnswer" onclick="stop()">Enviar resposta</button>
-            <button class="changeText" onclick="changeText()">Mudar texto</button>
-        </div>
+
+        <form id="submitAnswer">
+            <input type="text" placeholder="A ideia central do texto é..." required>
+            <div id="textButtons">
+                <button type="submit" class="sendAnswer" onclick="stop()">Enviar resposta</button>
+                <button class="changeText" onclick="changeText()">Mudar texto</button>
+            </div>
+        </form>
+
     </section>
 
     <footer>
