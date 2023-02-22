@@ -77,3 +77,11 @@ function changeText(){
     } 
     console.log("Segundo console.log: " + pos)
 }
+
+fetch("myday.json").then((response) => {
+    response.json().then((text) => {
+        text.myday.map((text) => {
+            document.getElementById("containerContent").innerHTML += `<p>${text.paragraph}</p>`
+        })
+    })
+})
