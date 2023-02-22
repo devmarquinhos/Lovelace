@@ -198,6 +198,8 @@ header {
     background-color: transparent;
 }
 
+
+
 #textButtons {
     display: inline-flex;
     gap: 16px;
@@ -264,7 +266,7 @@ footer .divider {
     justify-content: center;
     align-items: center;
     gap: 32px;
-    margin-top: 98px;
+    margin-top: 42px;
 }
 
 #timer {
@@ -355,10 +357,8 @@ footer .divider {
         justify-content: center;
         align-items: center;
     }
-    
-    #textContainer iframe {
-        width: 360px;
-        height: 720px;
-        margin: 32px;
+
+    #submitAnswer input::placeholder {
+        font-size: 12px;
     }
 }
