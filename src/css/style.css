@@ -174,14 +174,14 @@ header {
     flex-direction: column;
 }
 
-#textContainer iframe {
+#textContainer p {
     border: 1px solid #0077B6;
     border-radius: 6px;
     padding: 16px;
     width: 640px;
     height: 360px;
     margin: 32px;
-
+    user-select: none;
 }
 
 #textButtons {
