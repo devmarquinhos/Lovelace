@@ -1,4 +1,5 @@
 "use strict"
+let container = document.getElementById("containerContent")
 let pos = 0
 let hours = 0
 let minutes = 0
@@ -6,6 +7,7 @@ let seconds = 0
 let time = 1000 // Quantidade milésimos que um segundo possue
 let timer
 let timerStatus
+let practiceText
 
 function start() {
     switch (timerStatus) {
@@ -53,35 +55,36 @@ function timerStart(){
     return formatTimer
 }
 
-function changeText(){
+fetch('content.json')
+  .then(response => response.json()) 
+  .then(data => {
+    console.log(data)
+    practiceText = data.texts
+
+    // Nova Promise para retornar o array
+    return new Promise(resolve => {
+        resolve()
+    })
+})
+.then(() => {
+    changeText(practiceText)
+})
+
+function changeText(practiceText){
     stop()
     clearTimer()
     start()
     
-    const textAddress = [
-        '/assets/ourvacation.html',
-        '/assets/myday.html',
-        '/assets/mywonderfulfamily.html',
-        '/assets/mynameisjohn.html',
-        '/assets/agreatsummervacation.html'
-    ]
-
-    if (pos < textAddress.length) {
+    if (pos < practiceText.length) {
+        console.log("Entrou")
         pos++
-        document.getElementById("containerContent").setAttribute("src", textAddress[pos])
+        document.getElementById("containerContent")
+        container.innerHTML += `<p>${practiceText[pos].paragraph}</p>`
 
-        if (pos == textAddress.length) {
+        if (pos == practiceText.length) {
             pos = 0
-            document.getElementById("containerContent").setAttribute("src", textAddress[pos])
+            container.innerHTML += `<p>${practiceText[pos].paragraph}</p>`
         }
     } 
     console.log("Segundo console.log: " + pos)
 }
-
-fetch("myday.json").then((response) => {
-    response.json().then((text) => {
-        text.myday.map((text) => {
-            document.getElementById("containerContent").innerHTML += `<p>${text.paragraph}</p>`
-        })
-    })
-})
