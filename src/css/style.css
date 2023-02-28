@@ -45,9 +45,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
     width: 100%;
-    
     margin: 48px 0;
     font-size: 16px;
 }
@@ -62,14 +60,16 @@ header {
     display: flex;
     justify-content: center;
     text-align: center;
-
     border: 1px solid #0077B6;
     border-radius: 6px;
     padding: 32px;
     margin: 0 32px;
-
     box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
+}
 
+#containerContent{
+    display: flex;
+    justify-content: center;
 }
 
 /* Example Container */
@@ -93,7 +93,7 @@ header {
 }
 
 #exampleSection2 img {
-    width: 300px;
+    width: 400px;
     margin: 32px;
 }
 
@@ -169,18 +169,19 @@ header {
 /* Practice text */
 #textContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 }
 
 #textContainer p {
+    display: flex;
     border: 1px solid #0077B6;
     border-radius: 6px;
     padding: 16px;
     width: 80%;
     margin: 32px;
     user-select: none;
+    
 }
 
 #submitAnswer {
@@ -300,7 +301,7 @@ footer .divider {
 }
 
 /* Media queries */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1090px) {
     footer {
         display: flex;
         flex-direction: column;
@@ -331,20 +332,23 @@ footer .divider {
         box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
     
     }
+    .direita{
+        width: 100%;
+    }
+
 
     #exampleSection{
-        width: 300px;
+        width: 340px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        gap: 32px;
-        margin: 32px;
     }
 
     #exampleSection2 img {
-        margin-left: 40px;
+        margin: 32px;
+        width: 320px;
     }
 
     #interactButtons{
@@ -360,5 +364,15 @@ footer .divider {
 
     #submitAnswer input::placeholder {
         font-size: 12px;
+    }
+
+    #textContainer p {
+        border: 1px solid #0077B6;
+        border-radius: 6px;
+        padding: 16px;
+        width: 80%;
+        margin: 32px;
+        user-select: none;
+        
     }
 }
