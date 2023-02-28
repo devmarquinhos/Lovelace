@@ -39,6 +39,7 @@ header {
     justify-content: center;
     flex-direction: row-reverse;
 }
+
 /* Main content container */
 #mainContent {
     display: flex;
