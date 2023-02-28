@@ -42,5 +42,29 @@
 
     <!-- <script src="/src/js/timer.js"></script> -->
     <script src="./src/js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            background: 'black',
+            iconColor: 'blue',  
+            title: 'Iniciar Atividade?',
+            text: "Depois de confirmar não tera volta, a atividade inicia e sua pontuação começa a contar!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Iniciar!'
+          }).then((result) => {
+            if (result.dismiss) {
+                window. history. back()
+            }else{
+                history.pushState(null, null, document.URL);
+                window.addEventListener('popstate', function () {
+                    history.pushState(null, null, document.URL);
+                });
+            }
+          })
+    </script>
 </body>
 </html>
