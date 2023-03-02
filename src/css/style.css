@@ -9,12 +9,16 @@
 }
 
 *::selection {
-    background: #90E0EF;
-    color: #040404;
+    background: #F21B3F;
+    color: #FFFFFF;
 }
 
 body {
-    background: #040404;
+    background: linear-gradient(142.15deg, #FFFFFF 49.5%, #F21B3F 159.81%);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;
 }
 
 /* Header */
@@ -177,13 +181,14 @@ header {
 
 #textContainer p {
     display: flex;
-    border: 1px solid #0077B6;
+    border: 1px solid #F21B3F;
+    background: #FFFFFF;
     border-radius: 6px;
     padding: 16px;
     width: 80%;
     margin: 32px;
     user-select: none;
-    
+    color: #F21B3F;
 }
 
 #submitAnswer {
@@ -196,17 +201,17 @@ header {
 #submitAnswer input {
     padding: 16px;
     border-radius: 6px;
-    border: 1px solid #0077B6;
-    color: #F4F4F4;
+    border: 1px solid #F21B3F;
+    color: #141115;
     background-color: transparent;
 }
 
 .sendAnswer {
     width: 180px;
     padding: 16px;
-    color: #040404;
-    background: #90E0EF;
-    border: 1px solid ;
+    color: #FFFFFF;
+    background: #F21B3F;
+    border: none;
     border-radius: 6px;
     transition: all .2s;
     cursor: pointer;
@@ -222,16 +227,16 @@ header {
 .changeText {
     text-align: left;
     padding: 16px;
-    color: #f4f4f4;
-    background: transparent;
-    border: 1px solid #0077B6;
+    color: #F21B3F;
+    background: #FFFFFF;
+    border: 1px solid #F21B3F;
     border-radius: 6px;
     cursor: pointer;
     transition: all .2s;
 }
 
 .changeText:hover {
-    box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
+    box-shadow: 0px 8px 21px rgba(242, 27, 63, 0.15);
 }
 
 /* Footer */
@@ -281,27 +286,12 @@ footer .divider {
     width: 120px;
     height: 48px;
     padding: 32px;
-    border: 1px solid #0077B6;
+    border: 1px solid #F21B3F;
+    color: #F21B3F;
+    background-color: #ffffff;
     border-radius: 6px;
-    box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
+    box-shadow: 0px 8px 21px rgba(242, 27, 63, 0.15);
 
-}
-
-.timerButton {
-    width: 120px;
-    background-color: transparent;
-    border: 1px solid #0077B6;
-    border-radius: 6px;
-    padding: 16px;
-    color: #0077B6;
-    font-weight: 700;
-
-    transition: all .2s;
-}
-
-.timerButton:hover {
-    cursor: pointer;
-    background-color: #F4F4F4;
 }
 
 /* Media queries */
