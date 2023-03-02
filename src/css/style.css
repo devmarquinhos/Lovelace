@@ -172,6 +172,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 #textContainer p {
@@ -186,7 +187,7 @@ header {
 }
 
 #submitAnswer {
-    width: 80%;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -200,14 +201,8 @@ header {
     background-color: transparent;
 }
 
-
-
-#textButtons {
-    display: inline-flex;
-    gap: 16px;
-}
-
 .sendAnswer {
+    width: 180px;
     padding: 16px;
     color: #040404;
     background: #90E0EF;
@@ -217,7 +212,15 @@ header {
     cursor: pointer;
 }
 
+.changeTextButton {
+    position: relative;
+    top: 16px;
+    right: 25%;
+}
+
+
 .changeText {
+    text-align: left;
     padding: 16px;
     color: #f4f4f4;
     background: transparent;

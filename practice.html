@@ -26,11 +26,13 @@
 
         <form id="submitAnswer">
             <input type="text" placeholder="A ideia central do texto é..." required>
-            <div id="textButtons">
-                <button type="submit" class="sendAnswer" onclick="stop()">Enviar resposta</button>
-                <button class="changeText" onclick="changeText()">Mudar texto</button>
-            </div>
+            <button type="submit" class="sendAnswer" onclick="stop()">Enviar resposta</button>
+            
         </form>
+        <div class="changeTextButton">
+            <button class="changeText" onclick="changeText()">Mudar texto</button>
+
+        </div>
 
     </section>
 
@@ -40,7 +42,6 @@
         <p>Orientado pela <span>Prof. Dr. Lenade Barreto</span>.</p>
     </footer>
 
-    <!-- <script src="/src/js/timer.js"></script> -->
     <script src="./src/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
