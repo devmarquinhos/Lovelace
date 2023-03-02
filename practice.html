@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="./src/css/style.css">    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Linkando as Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Voltaire - Hora de praticar!</title>
+</head>
+<body onload="start()">
+    <header>
+        <h1>Voltaire</h1>
+    </header>
+
+    <div class="container">
+        <h3 id="timer">00:00:00</h3>
+    </div>
+
+    <section id="textContainer">
+        <div id="containerContent">
+            
+        </div>
+
+        <form id="submitAnswer">
+            <input type="text" placeholder="A ideia central do texto é..." required>
+            <div id="textButtons">
+                <button type="submit" class="sendAnswer" onclick="stop()">Enviar resposta</button>
+                <button class="changeText" onclick="changeText()">Mudar texto</button>
+            </div>
+        </form>
+
+    </section>
+
+    <footer>
+        <p>Desenvolvido por <span>Daniel Alves</span>,<span> Marcos Emanuel </span> e <span> Melkysedeke Costa</span>.</p>
+        <span class="divider"></span>
+        <p>Orientado pela <span>Prof. Dr. Lenade Barreto</span>.</p>
+    </footer>
+
+    <!-- <script src="/src/js/timer.js"></script> -->
+    <script src="./src/js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+
+            icon: 'warning',
+            background: 'white',
+            textColor: 'black',
+            iconColor: '#F21B3F',
+ 
+          }).then((result) => {
+            if (result.dismiss) {
+                window. history. back()
+            }else{
+                history.pushState(null, null, document.URL);
+                window.addEventListener('popstate', function () {
+                    history.pushState(null, null, document.URL);
+                });
+            }
+          })
+    </script>
+</body>
+</html>
