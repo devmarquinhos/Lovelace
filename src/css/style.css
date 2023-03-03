@@ -6,19 +6,17 @@
 
     font-size: 16px;
     color: #F4F4F4;
+    
 }
 
 *::selection {
     background: #F21B3F;
     color: #FFFFFF;
+    
 }
 
 body {
     background: linear-gradient(142.15deg, #FFFFFF 49.5%, #F21B3F 159.81%);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-    height: 100vh;
 }
 
 /* Header */
@@ -127,6 +125,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 16px;
+    transition: all .2s;
 }
 
 #interactButtons a {
@@ -155,13 +154,21 @@ header {
     padding: 16px;
     border-radius: 6px;
     color: #F21B3F;
-
     transition: all .2s;
 }
 
+#startPractice:hover{
+    border: 1px solid #F21B3F;
+    background-color: white;
+    color: #F21B3F;
+    box-shadow: 0px 8px 21px rgba(242, 27, 63, 0.15);
+
+}
+
 #seeBooks:hover {
-    border: 1px solid #F4F4F4;
-    color: #F4F4F4;
+    border: 1px solid #F21B3F;
+    color: black;
+    box-shadow: 0px 8px 21px rgba(242, 27, 63, 0.15);
 }
 
 /* Social Buttons */
@@ -200,6 +207,7 @@ header {
 
 #textContainer p {
     display: flex;
+    color: #141115;
     border: 1px solid #F21B3F;
     border-radius: 6px;
     padding: 16px;
@@ -236,7 +244,7 @@ header {
 
 .changeText {
     padding: 16px;
-    color: #f4f4f4;
+    color: #F21B3F;
     background: transparent;
     border: 1px solid #F21B3F;
     border-radius: 6px;
@@ -293,6 +301,9 @@ footer .divider {
     margin-top: 42px;
 }
 
+.container > h3{
+    color: #141115;
+}
 #timer {
     display: flex;
     justify-content: center;

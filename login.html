@@ -12,17 +12,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/stylelogin.css">
-    <title>Login</title>
+    <title>Lovelace</title>
 </head>
 <body>
     <div class="main-login">
         <div class="left-login">
-            <h1>Faça Login <br> E Aproveite</h1>
-            <img src="./src/img/leitor.svg" class="left-login-image" alt="Leitoraanimação">
+            <img src="./src/img/ada.svg" class="left-login-image" alt="Leitoraanimação"> 
         </div>
         <div class="right-login">
             <div class="card-login">
-                <h1>LOGIN</h1>
+                <h1>Faça Login</h1>
                 <form>
                 <div class="textfield">
                     <label for="usuario">Usuário</label>
@@ -50,33 +49,30 @@
                     text: 'Acesso Negado',
                     title: 'Preencha todos os Campos',
                     icon: 'warning',
-                    background: 'black',
-                    iconColor: 'blue'
+                    background: 'white',
+                    iconColor: '#F21B3F'
                 })
             }else if(login == "admin" &&  senha == "admin"){  
                     Swal.fire({
                         text: 'Login Efetuado',
-                        title: 'Seja bem vindo ao Voltaire!',
+                        title: 'Seja bem vindo ao Lovelace!',
                         icon: 'success',
-                        background: 'black',
-                        textColor: 'white',
-                        iconColor: 'blue'
+                        background: 'white',
+                        iconColor: '#F21B3F'
                     })
                     .then(() => {
-                        location.href="principal.html";
+                        location.href="index.html";
                     })
                 }else{
                     Swal.fire({
                         text: 'Acesso Negado',
                         title: 'Usuario ou Senha incorretos!',
                         icon: 'error',
-                        background: 'black',
-                        iconColor: 'blue'
+                        background: 'white',
+                        iconColor: '#F21B3F'
                     })
-                    
                 }
             }
-        
     </script>
 </body>
 </html>
