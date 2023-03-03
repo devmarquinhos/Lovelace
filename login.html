@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+    <link rel="stylesheet" href="/src/css/stylelogin.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +17,12 @@
 <body>
     <div class="main-login">
         <div class="left-login">
-            <img src="./src/img/ada.svg" class="left-login-image" alt="Leitoraanimação">
+            <h1>Faça Login <br> E Aproveite</h1>
+            <img src="./src/img/leitor.svg" class="left-login-image" alt="Leitoraanimação">
         </div>
         <div class="right-login">
             <div class="card-login">
-                <h1>Faça Login</h1>
+                <h1>LOGIN</h1>
                 <form>
                 <div class="textfield">
                     <label for="usuario">Usuário</label>
@@ -42,18 +50,17 @@
                     text: 'Acesso Negado',
                     title: 'Preencha todos os Campos',
                     icon: 'warning',
-                    background: 'white',
-                    textColor: 'black',
-                    iconColor: '#F21B3F'
+                    background: 'black',
+                    iconColor: 'blue'
                 })
             }else if(login == "admin" &&  senha == "admin"){  
                     Swal.fire({
                         text: 'Login Efetuado',
-                        title: 'Seja bem vindo ao Lovelace!',
+                        title: 'Seja bem vindo ao Voltaire!',
                         icon: 'success',
-                        background: 'white',
-                        textColor: 'black',
-                        iconColor: '#F21B3F'
+                        background: 'black',
+                        textColor: 'white',
+                        iconColor: 'blue'
                     })
                     .then(() => {
                         location.href="principal.html";
@@ -63,8 +70,8 @@
                         text: 'Acesso Negado',
                         title: 'Usuario ou Senha incorretos!',
                         icon: 'error',
-                        background: 'white',
-                        iconColor: '#F21B3F'
+                        background: 'black',
+                        iconColor: 'blue'
                     })
                     
                 }

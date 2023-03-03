@@ -10,11 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
     <title>Voltaire - Hora de praticar!</title>
 </head>
-<body onload="start()">
+<body>
     <header>
         <h1>Voltaire</h1>
     </header>
-
+ 
     <div class="container">
         <h3 id="timer">00:00:00</h3>
     </div>
@@ -26,11 +26,12 @@
 
         <form id="submitAnswer">
             <input type="text" placeholder="A ideia central do texto é..." required>
-            <div id="textButtons">
-                <button type="submit" class="sendAnswer" onclick="stop()">Enviar resposta</button>
-                <button class="changeText" onclick="changeText()">Mudar texto</button>
-            </div>
+            <button type="submit" class="sendAnswer" onclick="stop()">Enviar resposta</button>
+            
         </form>
+        <div class="changeTextButton">
+            <button class="changeText" onclick="changeText()">Mudar texto</button>
+        </div>
 
     </section>
 
