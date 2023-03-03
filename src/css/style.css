@@ -61,12 +61,14 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+
 }
 
 #mainContent h1 {
     font-size: 40px;
     margin: 48px 16px;
     color: #141115;
+    user-select: none;
 }
 
 #mainContent p {
