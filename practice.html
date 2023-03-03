@@ -39,18 +39,19 @@
         <span class="divider"></span>
         <p>Orientado pela <span>Prof. Dr. Lenade Barreto</span>.</p>
     </footer>
-
     <!-- <script src="/src/js/timer.js"></script> -->
     <script src="./src/js/script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         Swal.fire({
-
-            icon: 'warning',
-            background: 'white',
-            textColor: 'black',
-            iconColor: '#F21B3F',
- 
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'question',
+  iconColor: 'black',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.dismiss) {
                 window. history. back()
