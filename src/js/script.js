@@ -77,13 +77,13 @@ function changeText(practiceText){
     
     if (pos < practiceText.length) {
         console.log("Entrou")
+        container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
+        console.log("Posicao do array: " + pos)
         pos++
-        document.getElementById("containerContent")
-        container.innerHTML += `<p>${practiceText[pos].paragraph}</p>`
 
         if (pos == practiceText.length) {
             pos = 0
-            container.innerHTML += `<p>${practiceText[pos].paragraph}</p>`
+            container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
         }
     } 
     console.log("Segundo console.log: " + pos)
