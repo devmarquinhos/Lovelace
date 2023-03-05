@@ -24,12 +24,11 @@
             
         </div>
 
-        <form id="submitAnswer">
-            <input type="text" placeholder="A ideia central do texto é..." required>
-            <button type="submit" class="sendAnswer" onclick="stop()">Enviar resposta</button>
-            
-        </form>
-        <div class="changeTextButton">
+        <input id="submitAnswer" type="text" placeholder="A ideia central do texto é..." required>
+        
+        
+        <div class="answerButtons">
+            <button class="sendAnswer" onclick="stop()">Enviar resposta</button>
             <button class="changeText" onclick="changeText(practiceText)">Mudar texto</button>
         </div>
 
