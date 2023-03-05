@@ -5,7 +5,7 @@
     box-sizing: border-box;
 
     font-size: 16px;
-    color: #F4F4F4;
+    color: #141115;
     
 }
 
@@ -338,6 +338,107 @@ footer .divider {
     background-color: #F4F4F4;
 }
 
+/* Result modal */
+#resultContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1411157a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: linear-gradient(325.65deg, #FFFFFF 50%, #F21B3F 142.69%);
+    width: 50%;
+    min-width: 300px;
+    padding: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+.modal h1 {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+#scoreContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scoreTitle {
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(88.34deg, #F21B3F -11.9%, #FFD151 106.42%);
+    color: #FFFFFF;
+
+    font-size: 32px;
+    border-radius: 2px;
+}
+
+#score {
+    color: #FFFFFF;
+    font-size: 64px;
+}
+
+#level {
+    font-weight: 700;
+    font-size: 32px;
+    background:  linear-gradient(269.52deg, #F21B3F -1.77%, #FFD151 95%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#resultButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#savePdf {
+    height: 64px;
+    width: 8em;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    background: #F21B3F;
+    color: #FFFFFF;
+    border: 1px solid #F21B3F;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+#dontSavePdf {
+    height: 72px;
+    width: 8em;
+    padding: 16px;
+    border: 1px solid #F21B3F;
+    background: transparent;
+    cursor: pointer;
+    color: #F21B3F;
+    border-radius: 4px;
+}
+
+#savePdf:hover {
+    background: #FFFFFF;
+    color: #F21B3F;
+}
+
 /* Media queries */
 @media only screen and (max-width:1200px) {
     footer {
@@ -373,7 +474,6 @@ footer .divider {
         box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
     
     }
-
 
     #exampleSection{
         width: 85%;
