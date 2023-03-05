@@ -406,7 +406,7 @@ footer .divider {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
 }
 
@@ -424,7 +424,7 @@ footer .divider {
 }
 
 #dontSavePdf {
-    height: 72px;
+    height: 64px;
     width: 8em;
     padding: 16px;
     border: 1px solid #F21B3F;
@@ -519,5 +519,9 @@ footer .divider {
         
     }
     
+    #resultButtons {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
