@@ -347,9 +347,13 @@ footer .divider {
     top: 0;
     left: 0;
     z-index: 2000;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
+}
+
+#resultContainer.show {
+    display: flex;
 }
 
 .modal {
@@ -400,6 +404,7 @@ footer .divider {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    user-select: none;
 }
 
 #resultButtons {
