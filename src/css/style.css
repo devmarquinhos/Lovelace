@@ -340,8 +340,8 @@ footer .divider {
 
 /* Result modal */
 #resultContainer {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: #1411157a;
     position: fixed;
     top: 0;
