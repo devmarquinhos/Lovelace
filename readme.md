@@ -20,7 +20,7 @@
 
 Projeto para fins didáticos em sala de aula para que discentes (alunos) da matéria de lingua inglesa possam praticar sua leitura com textos dinâmicos e simples acompanhados de um docente (professor).
 
-Este foi orientado pela **Prof. Dr. Lenade Barreto**, desenvolvido e idealizado por **Daniel Santana**, **Marcos Emanuel** e **Melkysedeke Costa**.
+Este foi orientado pela **Prof. Dr. Lenade Barreto**, desenvolvido e idealizado por **Daniel de Santana**, **Marcos Emanuel** e **Melkysedeke Costa**.
 
 ## :rocket: Tecnologias
 
