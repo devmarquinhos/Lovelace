@@ -16,6 +16,7 @@
 }
 
 body {
+    overflow-x: hidden;
     background: linear-gradient(142.15deg, #FFFFFF 49.5%, #F21B3F 159.81%);
 }
 
@@ -213,12 +214,13 @@ header {
     border-radius: 6px;
     padding: 16px;
     width: 80%;
+    min-width: 300px;
     margin: 32px;
     user-select: none;
 }
 
 #submitAnswer {
-    width: 80vw;
+    width: 80%;
     display: flex;
     flex-direction: column;
     padding: 16px;
@@ -256,6 +258,7 @@ header {
 
 .answerButtons {
     display: flex;
+    flex-direction: column;
     margin: 16px 0;
     gap: 16px;
 }
@@ -277,7 +280,6 @@ footer {
     font-size: 16px;
     font-weight: 400;
     width: 100vw;
-    height: 100%;
     margin: 96px 0;
     text-align: center;
 }
@@ -308,6 +310,7 @@ footer .divider {
 .container > h3{
     color: #141115;
 }
+
 #timer {
     display: flex;
     justify-content: center;
@@ -508,6 +511,10 @@ footer .divider {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    #answerButtons {
+        flex-direction: column;
     }
 
     #submitAnswer input::placeholder {
