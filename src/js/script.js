@@ -10,6 +10,7 @@ let timerStatus
 let practiceText
 let sec,deCont,decress,minTime
 
+
 function start() {
     switch (timerStatus) {
         case "play":
