@@ -6,7 +6,7 @@ let minutes = 0
 let seconds = 0
 let time = 1000 // Quantidade milésimos que um segundo possue
 let timer
-let timerStatus
+let timerStatus = "stop"
 let practiceText
 let sec,deCont,decress,minTime
 
@@ -14,6 +14,8 @@ let sec,deCont,decress,minTime
 function start() {
     switch (timerStatus) {
         case "play":
+            return
+        case "stop":
             return
         default:
             timerStatus = "play"
@@ -111,11 +113,22 @@ function sendAnswers() {
     stop()
 
     let resContainer = document.getElementById("resultContainer")
-    resContainer.classList.add("show")
-    resContainer.addEventListener('click', (e) => {
-        if (e.target.id =='dontSavePdf') {
-            resContainer.classList.remove("show")
-        }
-    })
+    let answerContainer = document.getElementById("submitAnswer").value
 
+    switch (answerContainer) {
+        case "":
+            alert("Ei! O campo de resposta precisa estar preenchido!")
+            console.log("Campo vazio.")
+            break;
+    
+        default:
+            console.log(answerContainer)
+            resContainer.classList.add("show")
+            resContainer.addEventListener('click', (e) => {
+                if (e.target.id =='dontSavePdf') {
+                    resContainer.classList.remove("show")
+                }
+            })
+            break;
+    }
 }
