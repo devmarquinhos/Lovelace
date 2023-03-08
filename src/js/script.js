@@ -8,6 +8,7 @@ let time = 1000 // Quantidade milésimos que um segundo possue
 let timer
 let timerStatus
 let practiceText
+let sec,deCont,decress,minTime
 
 function start() {
     switch (timerStatus) {
@@ -26,6 +27,19 @@ function stop() {
     timerStatus = "stop"
     clearInterval(timer)
 }
+
+function getPoints(){
+    sec = seconds + (60*minutes) + (3600*hours)
+
+    if(sec <= minTime){
+        deCont = 0
+    }
+
+    deCont = (sec/30) - minTime
+
+    decress = deCont*15
+}
+
 
 function clearTimer(){
     clearInterval(timer)

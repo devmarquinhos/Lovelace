@@ -66,9 +66,13 @@ header {
 
 #mainContent h1 {
     font-size: 40px;
-    margin: 48px 16px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    margin-left: 24px;
+    margin-right: 16px;
     color: #141115;
     user-select: none;
+    
 }
 
 #mainContent p {
@@ -288,6 +292,7 @@ footer p span {
 footer p {
     color: #141115;
 }
+
 footer .divider {
     color: #141115;
     display: none;
@@ -306,6 +311,7 @@ footer .divider {
 .container > h3{
     color: #141115;
 }
+
 #timer {
     display: flex;
     justify-content: center;
@@ -372,7 +378,6 @@ footer .divider {
     
     }
 
-
     #exampleSection{
         width: 85%;
         display: flex;
@@ -383,7 +388,6 @@ footer .divider {
         box-sizing: border-box;
         margin-left: auto;
         margin-right: auto;
-        
     }
 
     #exampleSection2 img {
