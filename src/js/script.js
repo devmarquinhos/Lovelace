@@ -70,6 +70,7 @@ function timerStart(){
     return formatTimer
 }
 
+// Carregar o JSON
 fetch('content.json')
   .then(response => response.json()) 
   .then(data => {
@@ -85,6 +86,7 @@ fetch('content.json')
     changeText(practiceText)
 })
 
+// Função para alterar o texto usando Array
 function changeText(practiceText){
     stop()
     clearTimer()
@@ -92,14 +94,28 @@ function changeText(practiceText){
     
     if (pos < practiceText.length) {
         console.log("Entrou")
+        container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
+        console.log("Posicao do array: " + pos)
         pos++
-        document.getElementById("containerContent")
-        container.innerHTML += `<p>${practiceText[pos].paragraph}</p>`
 
         if (pos == practiceText.length) {
             pos = 0
-            container.innerHTML += `<p>${practiceText[pos].paragraph}</p>`
+            container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
         }
     } 
     console.log("Segundo console.log: " + pos)
+}
+
+// Fechar modal e parar o tempo
+function sendAnswers() {
+    stop()
+
+    let resContainer = document.getElementById("resultContainer")
+    resContainer.classList.add("show")
+    resContainer.addEventListener('click', (e) => {
+        if (e.target.id =='dontSavePdf') {
+            resContainer.classList.remove("show")
+        }
+    })
+
 }

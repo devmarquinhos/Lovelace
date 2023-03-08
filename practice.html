@@ -24,15 +24,12 @@
             
         </div>
 
-        <form id="submitAnswer">
-            <input type="text" placeholder="A ideia central do texto é..." required>
-            <button type="submit" class="sendAnswer" onclick="stop()">Enviar resposta</button>
-            
-        </form>
-        <div class="changeTextButton">
-            <button class="changeText" onclick="changeText()">Mudar texto</button>
+        <input id="submitAnswer" type="text" placeholder="A ideia central do texto é..." required>
+        
+        <div class="answerButtons">
+            <button class="sendAnswer" onclick="sendAnswers()">Enviar resposta</button>
+            <button class="changeText" onclick="changeText(practiceText)">Mudar texto</button>
         </div>
-
     </section>
 
     <footer>
@@ -40,9 +37,28 @@
         <span class="divider"></span>
         <p>Orientado pela <span>Prof. Dr. Lenade Barreto</span>.</p>
     </footer>
-    <!-- <script src="/src/js/timer.js"></script> -->
+
+    <section id="resultContainer">
+        <div class="modal">
+            <h1>Resultado</h1>
+
+            <div id="scoreContainer">
+                <h2 id="scoreTitle"><span id="score">74</span>/100</h2>
+            </div>
+
+            <p class="modalParagraph">Seu nível é:</p>
+            <span id="level">Advanced</span>
+            <p class="modalParagraph">Deseja salvar o resultado em um PDF?</p>
+            <div id="resultButtons">
+                <button id="savePdf">Quero!</button>
+                <button id="dontSavePdf" onclick="">Não quero</button>
+            </div>
+
+        </div>
+    </section>
+    <script src="/src/js/timer.js"></script>
     <script src="./src/js/script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         Swal.fire({
             title: 'Iniciar Atividade?',

@@ -5,7 +5,7 @@
     box-sizing: border-box;
 
     font-size: 16px;
-    color: #F4F4F4;
+    color: #141115;
     
 }
 
@@ -16,6 +16,7 @@
 }
 
 body {
+    overflow-x: hidden;
     background: linear-gradient(142.15deg, #FFFFFF 49.5%, #F21B3F 159.81%);
 }
 
@@ -41,6 +42,7 @@ header {
     justify-content: center;
     flex-direction: row-reverse;
 }
+
 /* Main content container */
 #mainContent {
     display: flex;
@@ -60,8 +62,6 @@ header {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-
 }
 
 #mainContent h1 {
@@ -218,6 +218,7 @@ header {
     border-radius: 6px;
     padding: 16px;
     width: 80%;
+    min-width: 300px;
     margin: 32px;
     user-select: none;
 }
@@ -226,10 +227,6 @@ header {
     width: 80%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-}
-
-#submitAnswer input {
     padding: 16px;
     border-radius: 6px;
     border: 1px solid #F21B3F;
@@ -238,7 +235,7 @@ header {
 }
 
 .sendAnswer {
-    width: 180px;
+    width: 200px;
     padding: 16px;
     color: #FFFFFF;
     background: #F21B3F;
@@ -249,6 +246,7 @@ header {
 }
 
 .changeText {
+    width: 200px;
     padding: 16px;
     color: #F21B3F;
     background: transparent;
@@ -260,6 +258,13 @@ header {
 
 .changeText:hover {
     box-shadow: 0px 8px 21px rgba(242, 27, 63, 0.15);
+}
+
+.answerButtons {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+    gap: 16px;
 }
 
 /* Footer */
@@ -278,8 +283,7 @@ footer {
     border-top: 1px solid #F21B3F;
     font-size: 16px;
     font-weight: 400;
-    width: 100%;
-    height: 128px;
+    width: 100vw;
     margin: 96px 0;
     text-align: center;
 }
@@ -340,6 +344,112 @@ footer .divider {
 .timerButton:hover {
     cursor: pointer;
     background-color: #F4F4F4;
+}
+
+/* Result modal */
+#resultContainer {
+    width: 100%;
+    height: 100%;
+    background-color: #1411157a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#resultContainer.show {
+    display: flex;
+}
+
+.modal {
+    background: linear-gradient(325.65deg, #FFFFFF 50%, #F21B3F 142.69%);
+    width: 50%;
+    min-width: 300px;
+    padding: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+.modal h1 {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+#scoreContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scoreTitle {
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(88.34deg, #F21B3F -11.9%, #FFD151 106.42%);
+    color: #FFFFFF;
+
+    font-size: 32px;
+    border-radius: 2px;
+}
+
+#score {
+    color: #FFFFFF;
+    font-size: 64px;
+}
+
+#level {
+    font-weight: 700;
+    font-size: 32px;
+    background:  linear-gradient(269.52deg, #F21B3F -1.77%, #FFD151 95%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+}
+
+#resultButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 16px;
+}
+
+#savePdf {
+    height: 64px;
+    width: 8em;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    background: #F21B3F;
+    color: #FFFFFF;
+    border: 1px solid #F21B3F;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+#dontSavePdf {
+    height: 64px;
+    width: 8em;
+    padding: 16px;
+    border: 1px solid #F21B3F;
+    background: transparent;
+    cursor: pointer;
+    color: #F21B3F;
+    border-radius: 4px;
+}
+
+#savePdf:hover {
+    background: #FFFFFF;
+    color: #F21B3F;
 }
 
 /* Media queries */
@@ -407,6 +517,10 @@ footer .divider {
         align-items: center;
     }
 
+    #answerButtons {
+        flex-direction: column;
+    }
+
     #submitAnswer input::placeholder {
         font-size: 12px;
     }
@@ -421,5 +535,9 @@ footer .divider {
         
     }
     
+    #resultButtons {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
