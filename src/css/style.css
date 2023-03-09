@@ -223,6 +223,7 @@ header {
     height: 320px;
     margin: 32px;
     user-select: none;
+    overflow: auto;
 }
 
 #submitAnswer {
