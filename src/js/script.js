@@ -101,8 +101,6 @@ function sendAnswers() {
 
     let resContainer = document.getElementById("resultContainer")
     let answerContainer = document.getElementById("submitAnswer").value
-
-  
     
     switch (answerContainer) {
         case "":
@@ -159,7 +157,6 @@ function sendAnswers() {
        rank = "Advançado"
     }
 
-
     document.getElementById("score").innerHTML = Math.round(score);
     document.getElementById("level").innerHTML = rank;
 
@@ -173,7 +170,6 @@ function sendAnswers() {
             answerContainer = document.getElementById("submitAnswer").value=''
         }
     })
-
             break;
     }
 }

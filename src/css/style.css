@@ -1,5 +1,5 @@
 * {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Noto Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -213,12 +213,14 @@ header {
 
 #textContainer p {
     display: flex;
+    font-family: 'Roboto Mono', monospace;
     color: #141115;
     border: 1px solid #F21B3F;
     border-radius: 6px;
     padding: 16px;
     width: 80%;
     min-width: 300px;
+    height: 320px;
     margin: 32px;
     user-select: none;
 }
@@ -336,7 +338,7 @@ footer .divider {
     border: 1px solid #F21B3F;
     border-radius: 6px;
     box-shadow: 0px 8px 21px rgba(0, 119, 182, 0.15);
-
+    font-family: 'Roboto Mono', monospace;
 }
 
 .timerButton {
