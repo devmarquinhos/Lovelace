@@ -1,5 +1,6 @@
 "use strict"
 let container = document.getElementById("containerContent")
+let pre
 let pos = 0
 let hours = 0
 let minutes = 0
@@ -9,8 +10,13 @@ let timer
 let timerStatus = "stop"
 let practiceText
 let sec,deCont,decress,score
-let ponto_por_palavra,qtd_de_palavras_chave=5,acertos,resposta
-
+let ponto_por_palavra,acertos,resposta
+/*var resp = [["A","RESPOSTA","CERT","E","TXT1"],
+            ["A","REPOSTA","CER","E","TXT2"],
+            ["A","RESPOTA","CE","E","TXT3"],
+            ["A","RESPOST","C","E","TXT4"],
+            ["A","ESPOSTA","CRT","E","TXT5"]]
+*/
 function start() {
     switch (timerStatus) {
         case "play":
@@ -28,7 +34,6 @@ function stop() {
     timerStatus = "stop"
     clearInterval(timer)
 }
-
 
 function clearTimer(){
     clearInterval(timer)
@@ -84,14 +89,16 @@ function changeText(practiceText){
         console.log("Entrou")
         container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
         console.log("Posicao do array: " + pos)
+        pre = pos
         pos++
-
+        
         if (pos == practiceText.length) {
             pos = 0
             container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
         }
     } 
     console.log("Segundo console.log: " + pos)
+    
 }
 
 
@@ -99,38 +106,47 @@ function changeText(practiceText){
 function sendAnswers() {
     stop()
 
+
     let resContainer = document.getElementById("resultContainer")
     let answerContainer = document.getElementById("submitAnswer").value
-
+    console.log("CONTAGEM: " + pre)
   
-    
+   
     switch (answerContainer) {
         case "":
-            alert("Ei! O campo de resposta precisa estar preenchido!")
+            Swal.fire({
+                text: 'Preencha todos os Campos',
+                title: 'Opa!!',
+                icon: 'warning',
+                background: 'white',
+                iconColor: '#F21B3F'
+            })
             console.log("Campo vazio.")
             break;
 
         default:
 
-    let palavra_acertada = 0,qtd_de_palavras_chave = 5
-    let minTime = 60
+    let palavra_acertada = 0
+    let minTime = 60,cont=0
     let rank
+    let resp = [["dia","gostos","autor"],                   // 0  O dia e os gostos do autor
+                ["odo","mal","erro","odor","ceu"],          // 1  odo mal erro odor ceu
+                ["odio","mal","erro",],                     // 3  odio mal erro
+                ["talvez","bom","dom","nao","teste"],       // 2  talvez bom dom nao teste
+                ["talvez","bom",]]                          // 4  talvez bom
 
-    if(answerContainer.includes("A")){
-        palavra_acertada ++
+    let qtd_de_palavras_chave = resp[pre].length
+
+    console.log(qtd_de_palavras_chave)
+
+    while(cont < qtd_de_palavras_chave){
+        if(answerContainer.includes(resp[pre][0])){
+            palavra_acertada ++
+        }
+        cont++
+    
     }
-    if(answerContainer.includes("resposta")){
-        palavra_acertada ++
-    }
-    if(answerContainer.includes("certa")){
-        palavra_acertada ++
-    }
-    if(answerContainer.includes("e")){
-        palavra_acertada ++
-    }
-    if(answerContainer.includes("essa")){
-        palavra_acertada ++
-    }
+
 
     ponto_por_palavra = 100 / qtd_de_palavras_chave
     acertos = ponto_por_palavra * palavra_acertada
@@ -146,31 +162,28 @@ function sendAnswers() {
     }
 
     if(score <= 0){
-       rank = "Ruim"
-    }else if(score <= 20){
-       rank = "Baixo"
-    }else if(score <= 40){
-       rank = "Bom"
-    }else if(score <= 60){
-       rank = "Medio"
-    }else if(score <= 80){
-       rank = "Alto"
+       rank = "Bad"
+       score = 0
+    }else if(score <= 34){
+       rank = "Beginner"
+    }else if(score <= 68){
+       rank = "Intermediary"
     }else if(score <= 100){
-       rank = "Advançado"
+       rank = "Advanced"
     }
 
 
     document.getElementById("score").innerHTML = Math.round(score);
     document.getElementById("level").innerHTML = rank;
 
-    console.log(score)
+    console.log(palavra_acertada)
 
     resContainer.classList.add("show")
     resContainer.addEventListener('click', (e) => {
         if (e.target.id =='dontSavePdf') {
             resContainer.classList.remove("show")
             changeText(practiceText)
-            answerContainer = document.getElementById("submitAnswer").value=''
+            answerContainer = document.getElementById("submitAnswer").value= " "
         }
     })
 
