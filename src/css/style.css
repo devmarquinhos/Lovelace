@@ -552,5 +552,12 @@ footer .divider {
         display: flex;
         flex-direction: column;
     }
+
+    .answerButtons{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
 }
 
