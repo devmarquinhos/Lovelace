@@ -172,7 +172,6 @@ function sendAnswers() {
        rank = "Advanced"
     }
 
-
     document.getElementById("score").innerHTML = Math.round(score);
     document.getElementById("level").innerHTML = rank;
 
@@ -186,7 +185,6 @@ function sendAnswers() {
             answerContainer = document.getElementById("submitAnswer").value= " "
         }
     })
-
             break;
     }
 }
