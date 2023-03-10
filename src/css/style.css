@@ -275,7 +275,7 @@ header {
 
 .answerButtons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 16px 0;
     gap: 16px;
 }
