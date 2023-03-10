@@ -110,7 +110,6 @@ function sendAnswers() {
     let resContainer = document.getElementById("resultContainer")
     let answerContainer = document.getElementById("submitAnswer").value
     console.log("CONTAGEM: " + pre)
-  
    
     switch (answerContainer) {
         case "":
@@ -140,7 +139,7 @@ function sendAnswers() {
     console.log(qtd_de_palavras_chave)
 
     while(cont < qtd_de_palavras_chave){
-        if(answerContainer.includes(resp[pre][0])){
+        if(answerContainer.includes(resp[pre][cont])){
             palavra_acertada ++
         }
         cont++
