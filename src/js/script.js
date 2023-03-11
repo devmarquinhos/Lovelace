@@ -128,9 +128,9 @@ function sendAnswers() {
     let minTime = 60,cont = 0
     let rank
     let resp = [["dia","gostos","autor"],                   // 0  O dia e os gostos do autor
-                ["odo","mal","erro","odor","ceu"],          // 1  odo mal erro odor ceu
-                ["odio","mal","erro",],                     // 3  odio mal erro
-                ["talvez","bom","dom","nao","teste"],       // 2  talvez bom dom nao teste
+                ["odo","mal","erro","odor","ceu"],          // 1  odo mal erro odor ceu 
+                ["odio","mal","erro",],                     // 2  odio mal erro 
+                ["talvez","bom","dom","nao","teste"],       // 3  talvez bom dom nao teste
                 ["talvez","bom",]]                          // 4  talvez bom
 
     let qtd_de_palavras_chave = resp[pre].length
