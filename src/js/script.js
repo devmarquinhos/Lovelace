@@ -92,13 +92,12 @@ function changeText(practiceText){
         pre = pos
         pos++
         
-        if (pos == practiceText.length) {
+        if (pos >= practiceText.length) {
             pos = 0
             container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
         }
     } 
     console.log("Segundo console.log: " + pos)
-    
 }
 
 
@@ -126,7 +125,7 @@ function sendAnswers() {
         default:
 
     let palavra_acertada = 0
-    let minTime = 60,cont=0
+    let minTime = 60,cont = 0
     let rank
     let resp = [["dia","gostos","autor"],                   // 0  O dia e os gostos do autor
                 ["odo","mal","erro","odor","ceu"],          // 1  odo mal erro odor ceu
@@ -138,14 +137,12 @@ function sendAnswers() {
 
     console.log(qtd_de_palavras_chave)
 
-    while(cont < qtd_de_palavras_chave){
+    while(cont <= qtd_de_palavras_chave){
         if(answerContainer.includes(resp[pre][cont])){
             palavra_acertada ++
         }
         cont++
-    
     }
-
 
     ponto_por_palavra = 100 / qtd_de_palavras_chave
     acertos = ponto_por_palavra * palavra_acertada
@@ -175,15 +172,16 @@ function sendAnswers() {
     document.getElementById("level").innerHTML = rank;
 
     console.log(palavra_acertada)
-
+    
     resContainer.classList.add("show")
     resContainer.addEventListener('click', (e) => {
         if (e.target.id =='dontSavePdf') {
             resContainer.classList.remove("show")
-            changeText(practiceText)
-            answerContainer = document.getElementById("submitAnswer").value= " "
+            answerContainer = document.getElementById("submitAnswer").value= ""
+            
         }
     })
+    changeText(practiceText)
             break;
     }
 }
