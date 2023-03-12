@@ -7,6 +7,7 @@
     font-size: 16px;
     color: #141115;
     
+    
 }
 
 *::selection {
@@ -18,6 +19,7 @@
 body {
     overflow-x: hidden;
     background: linear-gradient(142.15deg, #FFFFFF 49.5%, #F21B3F 159.81%);
+    
 }
 
 /* Header */

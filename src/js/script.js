@@ -11,12 +11,7 @@ let timerStatus = "stop"
 let practiceText
 let sec,deCont,decress,score
 let ponto_por_palavra,acertos,resposta
-/*var resp = [["A","RESPOSTA","CERT","E","TXT1"],
-            ["A","REPOSTA","CER","E","TXT2"],
-            ["A","RESPOTA","CE","E","TXT3"],
-            ["A","RESPOST","C","E","TXT4"],
-            ["A","ESPOSTA","CRT","E","TXT5"]]
-*/
+
 function start() {
     switch (timerStatus) {
         case "play":
@@ -107,7 +102,8 @@ function sendAnswers() {
 
 
     let resContainer = document.getElementById("resultContainer")
-    let answerContainer = document.getElementById("submitAnswer").value
+    let answerContainer = document.getElementById("submitAnswer").value.toLowerCase()
+
     console.log("CONTAGEM: " + pre)
    
     switch (answerContainer) {
@@ -131,7 +127,8 @@ function sendAnswers() {
                 ["odo","mal","erro","odor","ceu"],          // 1  odo mal erro odor ceu 
                 ["odio","mal","erro",],                     // 2  odio mal erro 
                 ["talvez","bom","dom","nao","teste"],       // 3  talvez bom dom nao teste
-                ["talvez","bom",]]                          // 4  talvez bom
+                ["talvez","bom",]                           // 4  talvez bom
+            ]                          
 
     let qtd_de_palavras_chave = resp[pre].length
 
