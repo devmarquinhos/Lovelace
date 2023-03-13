@@ -136,8 +136,8 @@ function sendAnswers() {
                 ["Ponteiros","C","acessar","manipular","dados","memória"],              // 10
                 ["Como","funciona","banco de dados",],                                  // 11
                 ["O que","é","eletromecanica"],                                         // 12
-                ["O que","é","como","funciona","CHATGPT"],                              // 13
-            ]                          
+                ["O que","é","como","funciona","CHATGPT"]                         // 13
+               ]                          
 
     let qtd_de_palavras_chave = resp[pre].length
 
