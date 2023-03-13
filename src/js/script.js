@@ -123,11 +123,20 @@ function sendAnswers() {
     let palavra_acertada = 0
     let minTime = 60,cont = 0
     let rank
-    let resp = [["dia","gostos","autor"],                   // 0  O dia e os gostos do autor
-                ["odo","mal","erro","odor","ceu"],          // 1  odo mal erro odor ceu 
-                ["odio","mal","erro",],                     // 2  odio mal erro 
-                ["talvez","bom","dom","nao","teste"],       // 3  talvez bom dom nao teste
-                ["talvez","bom",]                           // 4  talvez bom
+    let resp = [["dia","gostos","autor"],                                               // 0  O dia e os gostos do autor
+                ["viagem","ferias","franç","visitas","turísticos"],                     // 1  
+                ["vida","importância","familia",]                                       // 2  
+                ["importância","seus","sonhos","paixões"],                              // 3
+                ["Sempre","enfrentar","seus","medos"],                                  // 4 
+                ["importante","equilíbrio","paixões","felicidade","interesses"],        // 5
+                ["facilidade","instalação","versatilidade"," VS Code","código"],        // 6
+                ["contribuições","positivas","preocupações","negativas","equilíbrio"],  // 7
+                ["importancia","programação","habilidade","crucial"],                   // 8
+                ["Avanços","tecnologicos","Elon Musk"],                                 // 9
+                ["Ponteiros","C","acessar","manipular","dados","memória"],              // 10
+                ["Como","funciona","banco de dados",],                                  // 11
+                ["O que","é","eletromecanica"],                                         // 12
+                ["O que","é","como","funciona","CHATGPT"],                              // 13
             ]                          
 
     let qtd_de_palavras_chave = resp[pre].length
