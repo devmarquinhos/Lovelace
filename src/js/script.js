@@ -125,7 +125,7 @@ function sendAnswers() {
     let rank
     let resp = [["dia","gostos","autor"],                                               // 0  O dia e os gostos do autor
                 ["viagem","ferias","franç","visitas","turísticos"],                     // 1  
-                ["vida","importância","familia",]                                       // 2  
+                ["vida","importância","familia",],                                       // 2  
                 ["importância","seus","sonhos","paixões"],                              // 3
                 ["Sempre","enfrentar","seus","medos"],                                  // 4 
                 ["importante","equilíbrio","paixões","felicidade","interesses"],        // 5
