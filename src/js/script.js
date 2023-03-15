@@ -78,7 +78,6 @@ fetch('content.json')
 function changeText(practiceText){
     stop()
     clearTimer()
-    start()
     
     if (pos < practiceText.length) {
         console.log("Entrou")
@@ -95,37 +94,14 @@ function changeText(practiceText){
     console.log("Segundo console.log: " + pos)
 }
 
-
-// Fechar modal e parar o tempo
-function sendAnswers() {
-    stop()
-
-
-    let resContainer = document.getElementById("resultContainer")
-    let answerContainer = document.getElementById("submitAnswer").value.toLowerCase()
-
-    console.log("CONTAGEM: " + pre)
-   
-    switch (answerContainer) {
-        case "":
-            Swal.fire({
-                text: 'Preencha todos os Campos',
-                title: 'Opa!!',
-                icon: 'warning',
-                background: 'white',
-                iconColor: '#F21B3F'
-            })
-            console.log("Campo vazio.")
-            break;
-
-        default:
+function calc(resContainer,answerContainer){
 
     let palavra_acertada = 0
     let minTime = 60,cont = 0
     let rank
     let resp = [["dia","gostos","autor"],                                               // 0  O dia e os gostos do autor
                 ["viagem","ferias","franç","visitas","turísticos"],                     // 1  
-                ["vida","importância","familia",],                                       // 2  
+                ["vida","importância","familia",],                                      // 2  
                 ["importância","seus","sonhos","paixões"],                              // 3
                 ["Sempre","enfrentar","seus","medos"],                                  // 4 
                 ["importante","equilíbrio","paixões","felicidade","interesses"],        // 5
@@ -136,7 +112,7 @@ function sendAnswers() {
                 ["Ponteiros","C","acessar","manipular","dados","memória"],              // 10
                 ["Como","funciona","banco de dados",],                                  // 11
                 ["O que","é","eletromecanica"],                                         // 12
-                ["O que","é","como","funciona","CHATGPT"]                         // 13
+                ["O que","é","como","funciona","CHATGPT"]                               // 13
                ]                          
 
     let qtd_de_palavras_chave = resp[pre].length
@@ -178,16 +154,42 @@ function sendAnswers() {
     document.getElementById("level").innerHTML = rank;
 
     console.log(palavra_acertada)
-    
-    resContainer.classList.add("show")
-    resContainer.addEventListener('click', (e) => {
-        if (e.target.id =='dontSavePdf') {
-            resContainer.classList.remove("show")
-            answerContainer = document.getElementById("submitAnswer").value= ""
+
+}
+
+// Fechar modal e parar o tempo
+function sendAnswers() {
+    stop()
+
+
+    let resContainer = document.getElementById("resultContainer")
+    let answerContainer = document.getElementById("submitAnswer").value.toLowerCase()
+
+    console.log("CONTAGEM: " + pre)
+   
+    switch (answerContainer) {
+        case "":
+            Swal.fire({
+                text: 'Preencha todos os Campos',
+                title: 'Opa!!',
+                icon: 'warning',
+                background: 'white',
+                iconColor: '#F21B3F'
+            })
+            console.log("Campo vazio.")
+            break;
+
+        default:
+            calc(resContainer,answerContainer)
+            resContainer.classList.add("show")
+            resContainer.addEventListener('click', (e) => {
+                if (e.target.id =='dontSavePdf') {
+                    resContainer.classList.remove("show")
+                    answerContainer = document.getElementById("submitAnswer").value= ""
+                    start()
+                }
+            })
             
-        }
-    })
-    changeText(practiceText)
             break;
     }
 }

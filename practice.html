@@ -60,27 +60,10 @@
     <script src="./src/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        Swal.fire({
-            title: 'Iniciar Atividade?',
-            text: "A partir daqui não terá mais volta!",
-            icon: 'warning',
-            iconColor: '#F21B3F',
-            background: 'white',
-            showCancelButton: true,
-            confirmButtonColor: '#F21B3F',
-            cancelButtonborder: '20px',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Iniciar'
-          }).then((result) => {
-            if (result.dismiss) {
-                window. history. back()
-            }else{
-                history.pushState(null, null, document.URL);
-                window.addEventListener('popstate', function () {
-                    history.pushState(null, null, document.URL);
-                });
-            }
-          })
+    /*history.pushState(null, null, document.URL);
+    window.addEventListener('popstate', function () {
+    history.pushState(null, null, document.URL);
+    });*/
     </script>
 </body>
 </html>
