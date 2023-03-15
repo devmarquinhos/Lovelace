@@ -24,8 +24,11 @@ body {
 
 /* Header */
 header h1 {
-    color: #F21B3F;
-    font-size: 24px;
+    background:  linear-gradient(269.52deg, #F21B3F -1.77%, #FFD151 95%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 26px;
 }
 
 header {
