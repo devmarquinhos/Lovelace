@@ -94,7 +94,7 @@ function changeText(practiceText){
     console.log("Segundo console.log: " + pos)
 }
 
-function calc(resContainer,answerContainer){
+function calc(answerContainer){
 
     let palavra_acertada = 0
     let minTime = 60,cont = 0
@@ -180,7 +180,7 @@ function sendAnswers() {
             break;
 
         default:
-            calc(resContainer,answerContainer)
+            calc(answerContainer)
             resContainer.classList.add("show")
             resContainer.addEventListener('click', (e) => {
                 if (e.target.id =='dontSavePdf') {
