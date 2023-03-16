@@ -28,7 +28,7 @@ header h1 {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 26px;
+    font-size: 32px;
 }
 
 header {
@@ -155,7 +155,7 @@ header {
     background-color: #F21B3F;
     border: 1px solid #F21B3F;
     transition: all .2s;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 /* See eBooks button */
@@ -167,6 +167,7 @@ header {
     border-radius: 6px;
     color: #F21B3F;
     transition: all .2s;
+    
 }
 
 #startPractice:hover{

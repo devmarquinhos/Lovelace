@@ -1,7 +1,7 @@
 "use strict"
 let container = document.getElementById("containerContent")
 let pre
-let pos = 0
+let pos
 let hours = 0
 let minutes = 0
 let seconds = 0
@@ -12,6 +12,10 @@ let practiceText
 let sec,deCont,decress,score
 let ponto_por_palavra,acertos,resposta
 let testando
+
+function randomNumber (array){
+    return Math.floor(Math.random() * array.length)
+}
 
 function start() {
     switch (timerStatus) {
@@ -75,6 +79,8 @@ fetch('content.json')
     changeText(practiceText)
 })
 
+
+
 function alerta(){
     Swal.fire({
         title: 'Iniciar Atividade?',
@@ -116,6 +122,7 @@ function changeText(){
     stop()
     clearTimer()
     start()
+    pos = randomNumber(practiceText)
     if (pos <= practiceText.length) {
         console.log("Entrou")
         container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
@@ -123,7 +130,7 @@ function changeText(){
         pre = pos
         pos++
         
-        if (pos > practiceText.length) {
+        if (pos >= practiceText.length) {
             pos = 0
             container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
         }
@@ -134,7 +141,7 @@ function changeText(){
 function calc(answerContainer){
 
     let palavra_acertada = 0
-    let minTime = 60,cont = 0
+    let minTime = 75,cont = 0
     let rank
     let resp = [["dia","gostos","autor"],                                               // 0  O dia e os gostos do autor
                 ["viagem","ferias","franç","visitas","turísticos"],                     // 1  
@@ -149,7 +156,9 @@ function calc(answerContainer){
                 ["Ponteiros","C","acessar","manipular","dados","memória"],              // 10
                 ["Como","funciona","banco de dados",],                                  // 11
                 ["O que","é","eletromecanica"],                                         // 12
-                ["O que","é","como","funciona","CHATGPT"]                               // 13
+                ["O que","é","como","funciona","CHATGPT"],                              // 13
+                ["O que","é","como","funciona","CHATGPT"],                              // 14
+                ["O que","é","como","funciona","CHATGPT"]                               // 15
                ]                          
 
     let qtd_de_palavras_chave = resp[pre].length
@@ -241,12 +250,11 @@ function sendAnswers() {
             resContainer.addEventListener('click', (e) => {
                 if (e.target.id =='dontSavePdf') {
                     resContainer.classList.remove("show")
-                    testando = true
                     answerContainer = document.getElementById("submitAnswer").value= ""
-                    
+                    alerta()
                 }
             })
-            alerta()
+            
             
             
             break;
