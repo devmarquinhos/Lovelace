@@ -249,7 +249,7 @@ header {
     padding: 16px;
     color: #FFFFFF;
     background: #F21B3F;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 6px;
     transition: all .2s;
     cursor: pointer;
