@@ -136,6 +136,8 @@ function changeText(){
         }
     } 
     console.log("Segundo console.log: " + pos)
+    answerContainer = document.getElementById("submitAnswer").value= ""
+    
 }
 
 function calc(answerContainer){
@@ -254,9 +256,6 @@ function sendAnswers() {
                     alerta()
                 }
             })
-            
-            
-            
             break;
     }
 }
