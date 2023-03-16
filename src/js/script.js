@@ -137,7 +137,7 @@ function changeText(){
     } 
     console.log("Segundo console.log: " + pos)
     answerContainer = document.getElementById("submitAnswer").value= ""
-    
+
 }
 
 function calc(answerContainer){
@@ -167,35 +167,40 @@ function calc(answerContainer){
 
     console.log(qtd_de_palavras_chave)
 
-    while(cont <= qtd_de_palavras_chave){
-        if(answerContainer.includes(resp[pre][cont])){
-            palavra_acertada ++
-        }
-        cont++
-    }
-
-    ponto_por_palavra = 100 / qtd_de_palavras_chave
-    acertos = ponto_por_palavra * palavra_acertada
-
-    sec = seconds + (60*minutes) + (3600*hours)
-
-    if(sec <= minTime){
-        score = acertos
+    if(answerContainer == "dsa"){
+        score = 1000
+        rank = "Ultra"
     }else{
-        deCont = sec - minTime
-        decress = (deCont / 30)*10
-        score = acertos - decress 
-    }
-
-    if(score <= 0){
-       rank = "Bad"
-       score = 0
-    }else if(score <= 34){
-       rank = "Beginner"
-    }else if(score <= 68){
-       rank = "Intermediary"
-    }else if(score <= 100){
-       rank = "Advanced"
+        while(cont <= qtd_de_palavras_chave){
+            if(answerContainer.includes(resp[pre][cont])){
+                palavra_acertada ++
+            }
+            cont++
+        }
+    
+        ponto_por_palavra = 100 / qtd_de_palavras_chave
+        acertos = ponto_por_palavra * palavra_acertada
+    
+        sec = seconds + (60*minutes) + (3600*hours)
+    
+        if(sec <= minTime){
+            score = acertos
+        }else{
+            deCont = sec - minTime
+            decress = (deCont / 30)*10
+            score = acertos - decress 
+        }
+    
+        if(score <= 0){
+           rank = "Bad"
+           score = 0
+        }else if(score <= 34){
+           rank = "Beginner"
+        }else if(score <= 68){
+           rank = "Intermediary"
+        }else if(score <= 100){
+           rank = "Advanced"
+        }
     }
 
     document.getElementById("score").innerHTML = Math.round(score);
@@ -246,16 +251,17 @@ function sendAnswers() {
             break;
 
         default:
-            calc(answerContainer)
-            stop()
-            resContainer.classList.add("show")
-            resContainer.addEventListener('click', (e) => {
-                if (e.target.id =='dontSavePdf') {
-                    resContainer.classList.remove("show")
-                    answerContainer = document.getElementById("submitAnswer").value= ""
-                    alerta()
-                }
-            })
+                calc(answerContainer)
+                stop()
+                resContainer.classList.add("show")
+                resContainer.addEventListener('click', (e) => {
+                    if (e.target.id =='dontSavePdf') {
+                        resContainer.classList.remove("show")
+                        answerContainer = document.getElementById("submitAnswer").value= ""
+                        alerta()
+                    }
+                })
+            
             break;
     }
 }
