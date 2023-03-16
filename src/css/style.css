@@ -155,6 +155,7 @@ header {
     background-color: #F21B3F;
     border: 1px solid #F21B3F;
     transition: all .2s;
+    font-size: 18px;
 }
 
 /* See eBooks button */

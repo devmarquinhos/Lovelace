@@ -11,6 +11,7 @@ let timerStatus = "stop"
 let practiceText
 let sec,deCont,decress,score
 let ponto_por_palavra,acertos,resposta
+let testando
 
 function start() {
     switch (timerStatus) {
@@ -74,19 +75,55 @@ fetch('content.json')
     changeText(practiceText)
 })
 
-// Função para alterar o texto usando Array
-function changeText(practiceText){
-    stop()
-    clearTimer()
-    
-    if (pos < practiceText.length) {
+function alerta(){
+    Swal.fire({
+        title: 'Iniciar Atividade?',
+        text: "Um texto diferente e uma reposta diferente!",
+        icon: 'warning',
+        iconColor: '#F21B3F',
+        background: 'white',
+        showCancelButton: true,
+        confirmButtonColor: '#F21B3F',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Iniciar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            changeText()
+        }else{
+            location.href="index.html"
+        }
+      })
+}
+
+function nextText(){
+
+    if (pos <= practiceText.length) {
         console.log("Entrou")
         container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
         console.log("Posicao do array: " + pos)
         pre = pos
         pos++
         
-        if (pos >= practiceText.length) {
+        if (pos > practiceText.length) {
+            pos = 0
+            container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
+        }
+    } 
+    console.log("Segundo console.log: " + pos)
+}
+// Função para alterar o texto usando Array
+function changeText(){
+    stop()
+    clearTimer()
+    start()
+    if (pos <= practiceText.length) {
+        console.log("Entrou")
+        container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
+        console.log("Posicao do array: " + pos)
+        pre = pos
+        pos++
+        
+        if (pos > practiceText.length) {
             pos = 0
             container.innerHTML = `<p>${practiceText[pos].paragraph}</p>`
         }
@@ -154,7 +191,25 @@ function calc(answerContainer){
     document.getElementById("level").innerHTML = rank;
 
     console.log(palavra_acertada)
+}
 
+function pratica(){
+    Swal.fire({
+        title: 'Iniciar Atividade?',
+        text: "A partir daqui não terá mais volta!",
+        icon: 'warning',
+        iconColor: '#F21B3F',
+        background: 'white',
+        showCancelButton: true,
+        confirmButtonColor: '#F21B3F',
+        border: 'none',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Iniciar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            location.href="practice.html"
+        }
+      })
 }
 
 // Fechar modal e parar o tempo
@@ -181,14 +236,18 @@ function sendAnswers() {
 
         default:
             calc(answerContainer)
+            stop()
             resContainer.classList.add("show")
             resContainer.addEventListener('click', (e) => {
                 if (e.target.id =='dontSavePdf') {
                     resContainer.classList.remove("show")
+                    testando = true
                     answerContainer = document.getElementById("submitAnswer").value= ""
-                    start()
+                    
                 }
             })
+            alerta()
+            
             
             break;
     }
