@@ -263,7 +263,7 @@ function calc(answerContainer){
 
     console.log(qtd_de_palavras_chave)
 
-    if(answerContainer == "DMM"){
+    if(answerContainer == "dmm"){
         score = 1000
         rank = "ADM?"
     }else{
