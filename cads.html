@@ -20,18 +20,20 @@
         </div>
         <div class="right-login">
             <div class="card-login">
-                <h1>Faça Login</h1>
+                <h1>Cadastro</h1>
                 <form>
                 <div class="textfield">
                     <label for="usuario"></label>
                     <input type="text" placeholder="Usuario" id="login">
 
+                    <label for="email"></label>
+                    <input type="email" placeholder="E-mail" id="email">
+
                     <label for="senha"></label>
                     <input type="password" placeholder="Senha" id="senha">
                 </div>
                     <div class="btn">
-                        <input type="submit" value="Login" onclick="logar(); return false">
-                        <input type="submit" value="Cadastro" id="btnCads" onclick="cadLogin(); return false">
+                            <input type="submit" value="Cadastrar" onclick="cads(); return false">
                     </div>
                 </form>
             </div>

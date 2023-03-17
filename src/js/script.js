@@ -79,7 +79,85 @@ fetch('content.json')
     changeText(practiceText)
 })
 
+function pratica(){
+    Swal.fire({
+        title: 'Iniciar Atividade?',
+        text: "A partir daqui não terá mais volta!",
+        icon: 'warning',
+        iconColor: '#F21B3F',
+        background: 'white',
+        showCancelButton: true,
+        confirmButtonColor: '#F21B3F',
+        border: 'none',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Iniciar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            location.href="practice.html"
+        }
+      })
+}
 
+
+function logar(){
+    var login = document.getElementById('login').value;
+    var senha = document.getElementById('senha').value;
+
+    if(login == "" | senha == ""){
+        Swal.fire({
+            text: 'Acesso Negado',
+            title: 'Preencha todos os Campos',
+            icon: 'warning',
+            background: 'white',
+            iconColor: '#F21B3F'
+        })
+    }else if(login == "admin" &&  senha == "admin"){  
+            Swal.fire({
+                text: 'Login Efetuado',
+                title: 'Seja bem vindo ao Lovelace!',
+                icon: 'success',
+                background: 'white',
+                iconColor: '#F21B3F'
+            })
+            .then(() => {
+                location.href="index.html";
+            })
+        }else{
+            Swal.fire({
+                text: 'Acesso Negado',
+                title: 'Usuario ou Senha incorretos!',
+                icon: 'error',
+                background: 'white',
+                iconColor: '#F21B3F'
+            })
+        }
+    }
+
+function cads(){
+    var login = document.getElementById('login').value;
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('senha').value;
+
+    if(login == "" | senha == "" | email == ""){
+        Swal.fire({
+            text: 'Acesso Negado',
+            title: 'Preencha todos os Campos',
+            icon: 'warning',
+            background: 'white',
+            iconColor: '#F21B3F'
+        })
+        }else{
+            Swal.fire({
+                text: 'Cadastro Efetuado',
+                icon: 'success',
+                background: 'white',
+                iconColor: '#F21B3F',
+                confirmButtonText: 'Tela de Login'
+            }).then((result) => {
+                location.href="login.html"
+              })
+        }
+}
 
 function alerta(){
     Swal.fire({
@@ -97,6 +175,24 @@ function alerta(){
             changeText()
         }else{
             location.href="index.html"
+        }
+      })
+}
+
+function cadLogin(){
+    Swal.fire({
+        title: 'Novo Usuario?',
+        text: "Siga para se cadastrar e ter acesso a plataforma!",
+        icon: 'question',
+        iconColor: '#F21B3F',
+        background: 'white',
+        showCancelButton: true,
+        confirmButtonColor: '#F21B3F',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'SIM'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            location.href="cads.html"
         }
       })
 }
@@ -167,9 +263,9 @@ function calc(answerContainer){
 
     console.log(qtd_de_palavras_chave)
 
-    if(answerContainer == "dsa"){
+    if(answerContainer == "DMM"){
         score = 1000
-        rank = "Ultra"
+        rank = "ADM?"
     }else{
         while(cont <= qtd_de_palavras_chave){
             if(answerContainer.includes(resp[pre][cont])){
@@ -207,25 +303,6 @@ function calc(answerContainer){
     document.getElementById("level").innerHTML = rank;
 
     console.log(palavra_acertada)
-}
-
-function pratica(){
-    Swal.fire({
-        title: 'Iniciar Atividade?',
-        text: "A partir daqui não terá mais volta!",
-        icon: 'warning',
-        iconColor: '#F21B3F',
-        background: 'white',
-        showCancelButton: true,
-        confirmButtonColor: '#F21B3F',
-        border: 'none',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Iniciar'
-      }).then((result) => {
-        if (result.isConfirmed) {
-            location.href="practice.html"
-        }
-      })
 }
 
 // Fechar modal e parar o tempo
