@@ -263,40 +263,60 @@ function calc(answerContainer){
 
     console.log(qtd_de_palavras_chave)
 
-    if(answerContainer == "dmm"){
-        score = 1000
-        rank = "ADM?"
-    }else{
-        while(cont <= qtd_de_palavras_chave){
-            if(answerContainer.includes(resp[pre][cont])){
-                palavra_acertada ++
+
+    switch(answerContainer){
+
+        case "meow":
+            score = 1000
+            rank = "ADM?"
+            location.href="https://www.youtube.com/watch?v=hvL1339luv0"
+            break;
+
+        case "he-man":
+            score = 1000
+            rank = "ADM?"
+            location.href="https://www.youtube.com/watch?v=ZZ5LpwO-An4"
+        break;
+
+        case "leviousa":
+            score = 1000
+            rank = "ADM?"
+            location.href="https://www.youtube.com/watch?v=reop2bXiNgk"
+        break;
+
+            default:
+
+            while(cont <= qtd_de_palavras_chave){
+                if(answerContainer.includes(resp[pre][cont])){
+                    palavra_acertada ++
+                }
+                cont++
             }
-            cont++
-        }
-    
-        ponto_por_palavra = 100 / qtd_de_palavras_chave
-        acertos = ponto_por_palavra * palavra_acertada
-    
-        sec = seconds + (60*minutes) + (3600*hours)
-    
-        if(sec <= minTime){
-            score = acertos
-        }else{
-            deCont = sec - minTime
-            decress = (deCont / 30)*10
-            score = acertos - decress 
-        }
-    
-        if(score <= 0){
-           rank = "Bad"
-           score = 0
-        }else if(score <= 34){
-           rank = "Beginner"
-        }else if(score <= 68){
-           rank = "Intermediary"
-        }else if(score <= 100){
-           rank = "Advanced"
-        }
+        
+            ponto_por_palavra = 100 / qtd_de_palavras_chave
+            acertos = ponto_por_palavra * palavra_acertada
+        
+            sec = seconds + (60*minutes) + (3600*hours)
+        
+            if(sec <= minTime){
+                score = acertos
+            }else{
+                deCont = sec - minTime
+                decress = (deCont / 30)*10
+                score = acertos - decress 
+            }
+        
+            if(score <= 0){
+               rank = "Bad"
+               score = 0
+            }else if(score <= 34){
+               rank = "Beginner"
+            }else if(score <= 68){
+               rank = "Intermediary"
+            }else if(score <= 100){
+               rank = "Advanced"
+            }
+            break;
     }
 
     document.getElementById("score").innerHTML = Math.round(score);
