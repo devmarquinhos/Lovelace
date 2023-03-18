@@ -333,16 +333,21 @@ function sendAnswers() {
             break;
     }
 }
+
 const save=document.getElementById("save")
 
 save.addEventListener("click",(evt)=>{
-    const conteudo = document.getElementById('resultContainer').innerHTML
 
     let estilo = "<style>"
-    estilo += "* {font-family: 'Noto Sans', sans-serif; box-sizing: border-box;font-size: 16px;}"
+    estilo += "* {font-family: 'Noto Sans', sans-serif; box-sizing: border-box;font-size: 16px; ;}"
+
+    estilo += ".modal { padding: 72px; display: flex;"
+    estilo += "justify-content: center; align-items: center; flex-direction: column; gap: 16px; position: relative;}"
+
     estilo += "#resultContainer { with: 100%; font: 25px Calibri;}"
     estilo += "resultContainer, th, td {border: solid 2px #888; border-collapse: collapse;"
     estilo += "padding: 4px 8px; text-align: center;}"
+
     estilo += "#save {display: none;}"
     estilo += "#dontSavePdf {display: none;}"
     estilo += "footer {border-top: 1px solid #141115;}"
@@ -350,24 +355,12 @@ save.addEventListener("click",(evt)=>{
     estilo += ".paragraphmodal{display: none;}"
     estilo += "</style>"
 
-    const win = window.open('','','height=700,width=700')
-
-    win.document.write('<html><head>')
-    win.document.write('<title>Lovelace - PDF</title>')
-    win.document.write(estilo)
-    win.document.write('</head><body>')
-    win.document.write('<br><br><br><br><br><br><br><br><br><br><br><br><br>')
-    win.document.write(conteudo)
-    win.document.write('<br><br><br><br><br><br><br><br><br><br><br><br><br>')
-    win.document.write('<br><br><br><br><br><br><br><br><br><br><br><br><br>')
-    win.document.write('<footer>')
-    win.document.write('<p>Desenvolvido por <span>Daniel de Santana</span>,<span> Marcos Emanuel </span> e <span> Melkysedeke Costa</span>.</p>')
-    win.document.write('<span class="divider"></span>')
-    win.document.write('<p>Orientado pela <span>Prof. Dr. Lenade Barreto</span>.</p>')
-    win.document.write('</footer>')
-    win.document.write('</body></html>')
-
-    win.print()
-    win.close()
+printJS({
+    printable: 'resultContainer',
+    type: 'html',
+    css: 'https://printjs-4de6.kxcdn.com/print.min.css',
+    style: estilo,
+    documentTitle: 'Lovelace - PDF',
+  });
 })
 

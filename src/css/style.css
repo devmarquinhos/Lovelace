@@ -384,6 +384,11 @@ footer .divider {
     display: flex;
 }
 
+#foot{
+    display: none;
+        
+}
+
 .modal {
     background: linear-gradient(325.65deg, #FFFFFF 50%, #F21B3F 142.69%);
     width: 50%;
