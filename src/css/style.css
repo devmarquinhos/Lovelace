@@ -10,6 +10,8 @@
     
 }
 
+
+
 *::selection {
     background: #F21B3F;
     color: #FFFFFF;
@@ -306,15 +308,12 @@ footer {
     width: 100vw;
     margin: 96px 0;
     text-align: center;
+    color: #141115;
 }
 
 footer p span {
     color: #141115;
     font-weight: 700;
-}
-
-footer p {
-    color: #141115;
 }
 
 footer .divider {
@@ -372,6 +371,7 @@ footer .divider {
     height: 100%;
     background-color: #1411157a;
     position: fixed;
+    flex-direction: column;
     top: 0;
     left: 0;
     z-index: 2000;
@@ -435,6 +435,18 @@ footer .divider {
     user-select: none;
 }
 
+.usuario{
+    display: none;
+}
+
+.Text{
+    display: none;
+}
+
+.temp{
+    display: none;
+}
+
 #resultButtons {
     display: flex;
     align-items: center;
@@ -443,7 +455,7 @@ footer .divider {
     gap: 16px;
 }
 
-#savePdf {
+#save {
     height: 64px;
     width: 8em;
     padding: 16px;

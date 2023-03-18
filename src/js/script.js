@@ -11,7 +11,7 @@ let timerStatus = "stop"
 let practiceText
 let sec,deCont,decress,score
 let ponto_por_palavra,acertos,resposta
-let testando
+
 
 function randomNumber (array){
     return Math.floor(Math.random() * array.length)
@@ -40,7 +40,6 @@ function clearTimer(){
     hours = 0
     minutes = 0
     seconds = 0
-
     document.getElementById('timer').innerText = '00:00:00'
 }
 
@@ -62,7 +61,6 @@ function timerStart(){
 
     return formatTimer
 }
-
 // Carregar o JSON
 fetch('content.json')
   .then(response => response.json()) 
@@ -98,7 +96,6 @@ function pratica(){
       })
 }
 
-
 function logar(){
     var login = document.getElementById('login').value;
     var senha = document.getElementById('senha').value;
@@ -133,31 +130,6 @@ function logar(){
         }
     }
 
-function cads(){
-    var login = document.getElementById('login').value;
-    var email = document.getElementById('email').value;
-    var senha = document.getElementById('senha').value;
-
-    if(login == "" | senha == "" | email == ""){
-        Swal.fire({
-            text: 'Acesso Negado',
-            title: 'Preencha todos os Campos',
-            icon: 'warning',
-            background: 'white',
-            iconColor: '#F21B3F'
-        })
-        }else{
-            Swal.fire({
-                text: 'Cadastro Efetuado',
-                icon: 'success',
-                background: 'white',
-                iconColor: '#F21B3F',
-                confirmButtonText: 'Tela de Login'
-            }).then((result) => {
-                location.href="login.html"
-              })
-        }
-}
 
 function alerta(){
     Swal.fire({
@@ -263,7 +235,6 @@ function calc(answerContainer){
 
     console.log(qtd_de_palavras_chave)
 
-
     switch(answerContainer){
 
         case "meow":
@@ -283,7 +254,6 @@ function calc(answerContainer){
             rank = "ADM?"
             location.href="https://www.youtube.com/watch?v=reop2bXiNgk"
         break;
-
             default:
 
             while(cont <= qtd_de_palavras_chave){
@@ -321,6 +291,8 @@ function calc(answerContainer){
 
     document.getElementById("score").innerHTML = Math.round(score);
     document.getElementById("level").innerHTML = rank;
+    document.getElementById("txt").innerHTML = practiceText[pre].textTitle;
+    document.getElementById("time").innerHTML = document.getElementById("timer").innerHTML;
 
     console.log(palavra_acertada)
 }
@@ -328,7 +300,6 @@ function calc(answerContainer){
 // Fechar modal e parar o tempo
 function sendAnswers() {
     stop()
-
 
     let resContainer = document.getElementById("resultContainer")
     let answerContainer = document.getElementById("submitAnswer").value.toLowerCase()
@@ -362,3 +333,41 @@ function sendAnswers() {
             break;
     }
 }
+const save=document.getElementById("save")
+
+save.addEventListener("click",(evt)=>{
+    const conteudo = document.getElementById('resultContainer').innerHTML
+
+    let estilo = "<style>"
+    estilo += "* {font-family: 'Noto Sans', sans-serif; box-sizing: border-box;font-size: 16px;}"
+    estilo += "#resultContainer { with: 100%; font: 25px Calibri;}"
+    estilo += "resultContainer, th, td {border: solid 2px #888; border-collapse: collapse;"
+    estilo += "padding: 4px 8px; text-align: center;}"
+    estilo += "#save {display: none;}"
+    estilo += "#dontSavePdf {display: none;}"
+    estilo += "footer {border-top: 1px solid #141115;}"
+    estilo += "footer p span { color: #141115; font-weight: 700;}"
+    estilo += ".paragraphmodal{display: none;}"
+    estilo += "</style>"
+
+    const win = window.open('','','height=700,width=700')
+
+    win.document.write('<html><head>')
+    win.document.write('<title>Lovelace - PDF</title>')
+    win.document.write(estilo)
+    win.document.write('</head><body>')
+    win.document.write('<br><br><br><br><br><br><br><br><br><br><br><br><br>')
+    win.document.write(conteudo)
+    win.document.write('<br><br><br><br><br><br><br><br><br><br><br><br><br>')
+    win.document.write('<br><br><br><br><br><br><br><br><br><br><br><br><br>')
+    win.document.write('<footer>')
+    win.document.write('<p>Desenvolvido por <span>Daniel de Santana</span>,<span> Marcos Emanuel </span> e <span> Melkysedeke Costa</span>.</p>')
+    win.document.write('<span class="divider"></span>')
+    win.document.write('<p>Orientado pela <span>Prof. Dr. Lenade Barreto</span>.</p>')
+    win.document.write('</footer>')
+    win.document.write('</body></html>')
+
+    win.print()
+    win.close()
+})
+
