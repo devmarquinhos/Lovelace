@@ -165,6 +165,8 @@ function cadLogin(){
       }).then((result) => {
         if (result.isConfirmed) {
             location.href="cads.html"
+
+
         }
       })
 }
@@ -238,20 +240,20 @@ function calc(answerContainer){
     switch(answerContainer){
 
         case "meow":
-            score = 1000
-            rank = "ADM?"
+            score = 1
+            rank = "-_-"
             location.href="https://www.youtube.com/watch?v=hvL1339luv0"
             break;
 
         case "he-man":
-            score = 1000
-            rank = "ADM?"
+            score = 1
+            rank = "-_-"
             location.href="https://www.youtube.com/watch?v=ZZ5LpwO-An4"
         break;
 
         case "leviousa":
-            score = 1000
-            rank = "ADM?"
+            score = 1
+            rank = "-_-"
             location.href="https://www.youtube.com/watch?v=reop2bXiNgk"
         break;
             default:
@@ -293,7 +295,7 @@ function calc(answerContainer){
     document.getElementById("level").innerHTML = rank;
     document.getElementById("txt").innerHTML = practiceText[pre].textTitle;
     document.getElementById("time").innerHTML = document.getElementById("timer").innerHTML;
-
+    document.getElementById("login").innerHTML = login;
     console.log(palavra_acertada)
 }
 

@@ -75,6 +75,12 @@
     <script src="/src/js/timer.js"></script>
     <script src="./src/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    
+    <script>
+        history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.URL);
+            });
+    </script>
 </body>
 </html>
