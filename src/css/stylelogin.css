@@ -100,7 +100,7 @@ body {
     gap: 5px;
     margin-top: 4px;
 }
-.btn > input{
+.btn > button{
     margin-top: 12px;
     width: 100%;
     padding: 1em;
