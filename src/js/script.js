@@ -1,4 +1,3 @@
-"use strict"
 let container = document.getElementById("containerContent")
 let pre
 let pos
@@ -11,7 +10,7 @@ let timerStatus = "stop"
 let practiceText
 let sec,deCont,decress,score
 let ponto_por_palavra,acertos,resposta
-
+let answerContainer
 
 function randomNumber (array){
     return Math.floor(Math.random() * array.length)
@@ -161,7 +160,8 @@ function cadLogin(){
         showCancelButton: true,
         confirmButtonColor: '#F21B3F',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'SIM'
+        confirmButtonText: 'SIM',
+        cancelButtonText: 'NÃO'
       }).then((result) => {
         if (result.isConfirmed) {
             location.href="cads.html"
@@ -215,22 +215,22 @@ function calc(answerContainer){
     let palavra_acertada = 0
     let minTime = 75,cont = 0
     let rank
-    let resp = [["dia","gostos","autor"],                                               // 0  O dia e os gostos do autor
-                ["viagem","ferias","franç","visitas","turísticos"],                     // 1  
-                ["vida","importância","familia",],                                      // 2  
-                ["importância","seus","sonhos","paixões"],                              // 3
-                ["Sempre","enfrentar","seus","medos"],                                  // 4 
-                ["importante","equilíbrio","paixões","felicidade","interesses"],        // 5
-                ["facilidade","instalação","versatilidade"," VS Code","código"],        // 6
-                ["contribuições","positivas","preocupações","negativas","equilíbrio"],  // 7
-                ["importancia","programação","habilidade","crucial"],                   // 8
-                ["Avanços","tecnologicos","Elon Musk"],                                 // 9
-                ["Ponteiros","C","acessar","manipular","dados","memória"],              // 10
-                ["Como","funciona","banco de dados",],                                  // 11
-                ["O que","é","eletromecanica"],                                         // 12
-                ["O que","é","como","funciona","CHATGPT"],                              // 13
-                ["O que","é","como","funciona","CHATGPT"],                              // 14
-                ["O que","é","como","funciona","CHATGPT"]                               // 15
+    let resp = [["wake up","school","lunch","play","book"],                                            // 0  
+                ["summer","vacation","paris","french food","tourist places"],                          // 1  
+                ["family","montains","brothers","grand-mother","união"],                               // 2  
+                ["florida","beach","surf","conchas"],                                                  // 3
+                ["bakery","hard work","clients","brand"],                                              // 4 
+                ["height","fear","baloon","confront","personal growt"],                                // 5
+                ["dance","balance","diversity","personal achievement","passions"],                     // 6
+                ["increase","vs code","guide","productivity","installation"],                          // 7
+                ["advancements","information","protection","social interaction","cyber attacks"],      // 8
+                ["programming","successful career","importance","solve problems","importance"],        // 9
+                ["elon musk","spacex","tesla","falcon 9","cybertruck"],                                // 10
+                ["pointers","memory","allocation","functions"],                                        // 11
+                ["software","databases","memory","management"],                                        // 12
+                ["electromechanics","electromechanical systems","energy","electric motors","systems"], // 13
+                ["chatgpt","openai","language model","deep learning","customer service"],              // 14
+                ["wake up","school","lunch","play","book"]                                             // 15
                ]                          
 
     let qtd_de_palavras_chave = resp[pre].length
@@ -251,10 +251,16 @@ function calc(answerContainer){
             location.href="https://www.youtube.com/watch?v=ZZ5LpwO-An4"
         break;
 
-        case "leviousa":
+        case "lalala":
             score = 1
             rank = "-_-"
-            location.href="https://www.youtube.com/watch?v=reop2bXiNgk"
+            location.href="https://www.youtube.com/watch?v=gweaFYD6LSg"
+        break;
+
+        case "rodeio trap":
+            score = 1
+            rank = "-_-"
+            location.href="https://www.youtube.com/watch?v=FNDhx6qAohY"
         break;
             default:
 
@@ -295,7 +301,6 @@ function calc(answerContainer){
     document.getElementById("level").innerHTML = rank;
     document.getElementById("txt").innerHTML = practiceText[pre].textTitle;
     document.getElementById("time").innerHTML = document.getElementById("timer").innerHTML;
-    document.getElementById("login").innerHTML = "admin";
     console.log(palavra_acertada)
 }
 

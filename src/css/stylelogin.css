@@ -92,6 +92,7 @@ body {
  color: #F4F4F4;   
  
 }
+
 .btn{
     display: flex;
     justify-content: center;
@@ -100,6 +101,7 @@ body {
     gap: 5px;
     margin-top: 4px;
 }
+
 .btn > button{
     margin-top: 12px;
     width: 100%;
