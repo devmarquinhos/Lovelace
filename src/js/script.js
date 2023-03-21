@@ -301,6 +301,7 @@ function calc(answerContainer){
     document.getElementById("level").innerHTML = rank;
     document.getElementById("txt").innerHTML = practiceText[pre].textTitle;
     document.getElementById("time").innerHTML = document.getElementById("timer").innerHTML;
+    // document.getElementById("login").innerHTML = "admin";
     console.log(palavra_acertada)
 }
 
